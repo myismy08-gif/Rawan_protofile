@@ -475,6 +475,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // نستهدف كل الكروت
+  const items = document.querySelectorAll(".portfolio-grid .item");
+
+  items.forEach(item => {
+    const link = item.querySelector("a");
+    const overlay = item.querySelector("div.absolute"); // الـ overlay
+
+    if (!link || !overlay) return;
+
+    // حالة الضغط
+    let overlayVisible = false;
+
+    item.addEventListener("click", function (e) {
+      // لو الظل مو ظاهر → أظهره فقط
+      if (!overlayVisible) {
+        e.preventDefault();
+        overlay.classList.add("!opacity-100"); // tailwind override
+        overlayVisible = true;
+      } else {
+        // ثاني لمسة (في أي مكان فوق الكرت) → يفتح الرابط
+        window.location.href = link.getAttribute("href");
+      }
+    });
+
+    // لو ضغط برة الكرت → يخفي الظل
+    document.addEventListener("click", function reset(ev) {
+      if (!item.contains(ev.target)) {
+        overlay.classList.remove("!opacity-100");
+        overlayVisible = false;
+      }
+    });
+  });
+});
 </script>
 
 

@@ -152,79 +152,33 @@ if (loadMoreBtn) {
 });
 
 
+// 🟣 Tap مرة أولى للظل، مرة ثانية لفتح الرابط
+document.addEventListener("DOMContentLoaded", () => {
+  const previewItems = document.querySelectorAll(".portfolio__item.preview-only");
 
+  previewItems.forEach(item => {
+    let tappedOnce = false;
 
-
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") {
-    // شيل transition مؤقتاً
-    document.querySelectorAll(".portfolio__overlay").forEach(el => {
-      el.style.transition = "none";
-      // رجع transition بعد لحظة صغيرة
-      setTimeout(() => {
-        el.style.transition = "opacity .3s ease, visibility .3s ease";
-      }, 50);
-    });
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const items = document.querySelectorAll(".portfolio__item");
-
-  items.forEach(item => {
     item.addEventListener("click", function (e) {
-      // إذا ضغط على زر أو رابط جوه الكرت، ما يلغي الرابط
-      if (e.target.tagName.toLowerCase() === "a" || e.target.closest("a")) {
-        return;
+      const overlay = this.querySelector(".portfolio__overlay");
+
+      if (!tappedOnce) {
+        e.preventDefault(); // منع فتح الرابط
+        if (overlay) overlay.style.opacity = "1"; // أظهر الظل
+        tappedOnce = true;
+
+        // لو لمس خارج العنصر → رجّع الوضع
+        document.addEventListener("click", function reset(ev) {
+          if (!item.contains(ev.target)) {
+            if (overlay) overlay.style.opacity = "0";
+            tappedOnce = false;
+            document.removeEventListener("click", reset);
+          }
+        });
+      } else {
+        // ثاني لمسة → يفتح الرابط
+        window.location.href = item.getAttribute("href");
       }
-
-      // يشيل active من كل العناصر
-      items.forEach(i => i.classList.remove("active"));
-
-      // يضيف active للعنصر المضغوط
-      item.classList.add("active");
     });
   });
-});
-document.querySelectorAll('.portfolio__item').forEach(item => {
-  const overlay = item.querySelector('.portfolio__overlay');
-
-  // أول ضغطة: يظهر الظل
-  item.addEventListener('click', function (e) {
-    // لو الظل ظاهر بالفعل → ينقل للبيج
-    if (item.classList.contains('show-overlay')) {
-      window.location.href = "page.html"; 
-    } else {
-      e.preventDefault(); // منع النقل المباشر
-      item.classList.add('show-overlay');
-    }
-  });
-
-  // لو ضغط على أي مكان بالظل → ينقل
-  if (overlay) {
-    overlay.addEventListener('click', function () {
-      window.location.href = "page.html";
-    });
-  }
-});
-document.querySelectorAll('.portfolio__item').forEach(item => {
-  const overlay = item.querySelector('.portfolio__overlay');
-
-  // أول ضغطة: يظهر الظل
-  item.addEventListener('click', function (e) {
-    // لو الظل ظاهر بالفعل → ينقل للبيج
-    if (item.classList.contains('show-overlay')) {
-      window.location.href = "page.html"; 
-    } else {
-      e.preventDefault(); // منع النقل المباشر
-      item.classList.add('show-overlay');
-    }
-  });
-
-  // لو ضغط على أي مكان بالظل → ينقل
-  if (overlay) {
-    overlay.addEventListener('click', function () {
-      window.location.href = "page.html";
-    });
-  }
 });
