@@ -182,3 +182,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// 🟣 Tap مرة أولى للظل، مرة ثانية لفتح الرابط (للجوال فقط)
+document.addEventListener("DOMContentLoaded", () => {
+  const previewItems = document.querySelectorAll(".portfolio__item.preview-only");
+
+  previewItems.forEach(item => {
+    let tappedOnce = false;
+
+    item.addEventListener("click", function (e) {
+      const overlay = this.querySelector(".portfolio__overlay");
+
+      // 👇 الشرط: نفّذ منطق الضغط مرتين فقط لو الشاشة أصغر من 768px
+      if (window.innerWidth < 768) {
+        if (!tappedOnce) {
+          e.preventDefault(); // امنع فتح الرابط أول مرة
+          if (overlay) overlay.style.opacity = "1"; // أظهر الظل
+          tappedOnce = true;
+
+          // إذا ضغط برّا العنصر → رجّع الوضع
+          document.addEventListener("click", function reset(ev) {
+            if (!item.contains(ev.target)) {
+              if (overlay) overlay.style.opacity = "0";
+              tappedOnce = false;
+              document.removeEventListener("click", reset);
+            }
+          });
+        } else {
+          // ثاني لمسة بالجوال → افتح الرابط
+          window.location.href = item.getAttribute("href");
+        }
+      } else {
+        // ✨ على الكمبيوتر → افتح الرابط من أول ضغطة
+        // (مافي داعي e.preventDefault هنا)
+        window.location.href = item.getAttribute("href");
+      }
+    });
+  });
+});
