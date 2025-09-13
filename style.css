@@ -2064,39 +2064,37 @@ header nav ul li a:hover {
   .outer-green .loop {
     animation-duration: 12s !important;  /* ✨ أسرع بكثير */
   }
-  /* 🟣 تخصيص نصوص overlay للجوال فقط */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🟣 للجوال فقط */
 @media (max-width: 767px) {
   .portfolio__overlay p {
-    font-family: var(--font-sans);
-    font-size: 13px;   /* أصغر شوي للجوال */
-    line-height: 1.5;
-    color: #fff;
-    margin: 0;
-  }
-  .portfolio__overlay .btn-link {
-    font-size: 11px;
-    font-weight: 600;
-  }
-
-/* 🟣 توحيد الخطوط في الجوال فقط */
-  .portfolio-grid .item .absolute p {
     font-family: var(--font-sans) !important;
-    font-size: 13px !important;
-    font-weight: 500 !important;
+    font-size: 13px !important;     /* حجم مناسب للجوال */
+    font-weight: 500 !important;    /* وسط */
     line-height: 1.6 !important;
+    letter-spacing: normal !important; /* ✨ يشيل التباعد الغريب */
     margin: 0 !important;
+    text-align: center !important;
   }
 
-  .portfolio-grid .item .absolute span {
+  .portfolio__overlay .btn-link {
     font-family: var(--font-sans) !important;
-    font-weight: 600 !important;
     font-size: 12px !important;
-  }
-}
-  .portfolio__overlay p {
-    letter-spacing: normal !important; /* رجع المسافات طبيعية */
-    font-size: 14px !important;        /* حجم متناسق */
-    font-weight: 500 !important;       /* وسط */
-    line-height: 1.6 !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
   }
 }
