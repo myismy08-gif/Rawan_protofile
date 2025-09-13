@@ -2093,4 +2093,10 @@ header nav ul li a:hover {
     font-size: 12px !important;
   }
 }
+  .portfolio__overlay p {
+    letter-spacing: normal !important; /* رجع المسافات طبيعية */
+    font-size: 14px !important;        /* حجم متناسق */
+    font-weight: 500 !important;       /* وسط */
+    line-height: 1.6 !important;
+  }
 }
