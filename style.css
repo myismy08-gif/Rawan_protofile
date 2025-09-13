@@ -2073,14 +2073,12 @@ header nav ul li a:hover {
     color: #fff;
     margin: 0;
   }
-
   .portfolio__overlay .btn-link {
     font-size: 11px;
     font-weight: 600;
   }
-}
+
 /* 🟣 توحيد الخطوط في الجوال فقط */
-@media (max-width: 767px) {
   .portfolio-grid .item .absolute p {
     font-family: var(--font-sans) !important;
     font-size: 13px !important;
@@ -2095,5 +2093,4 @@ header nav ul li a:hover {
     font-size: 12px !important;
   }
 }
-
 }
