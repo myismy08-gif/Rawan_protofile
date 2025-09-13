@@ -2079,5 +2079,21 @@ header nav ul li a:hover {
     font-weight: 600;
   }
 }
+/* 🟣 توحيد الخطوط في الجوال فقط */
+@media (max-width: 767px) {
+  .portfolio-grid .item .absolute p {
+    font-family: var(--font-sans) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+
+  .portfolio-grid .item .absolute span {
+    font-family: var(--font-sans) !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+  }
+}
 
 }
