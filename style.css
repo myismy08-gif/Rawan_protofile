@@ -2081,20 +2081,43 @@ header nav ul li a:hover {
 
 /* 🟣 للجوال فقط */
 @media (max-width: 767px) {
-  .portfolio__overlay p {
-    font-family: var(--font-sans) !important;
-    font-size: 13px !important;     /* حجم مناسب للجوال */
-    font-weight: 500 !important;    /* وسط */
-    line-height: 1.6 !important;
-    letter-spacing: normal !important; /* ✨ يشيل التباعد الغريب */
-    margin: 0 !important;
-    text-align: center !important;
-  }
-
-  .portfolio__overlay .btn-link {
-    font-family: var(--font-sans) !important;
+ .portfolio__overlay .btn-link {
+    display: inline-block;
+    margin-top: 6px !important;   /* ✨ الزر أقرب للنص */
+    margin-bottom: 0 !important;
+    background: rgba(255,255,255,0.15); /* يظل شفاف فاتح */
+    color: #fff;
+    padding: 6px 12px !important;
+    border-radius: 6px;
     font-size: 12px !important;
     font-weight: 600 !important;
-    padding: 6px 12px !important;
+    text-align: center;
+    transition: none; /* ❌ ما فيه تغيير لون */
   }
+
+  /* 🟣 نحذف تأثير الهوفر */
+  .portfolio__overlay .btn-link:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+  }
+
+  /* 🟣 توسيط النص والزر */
+  .portfolio__overlay {
+    display: flex;
+    align-items: center;     /* وسط عمودياً */
+    justify-content: center; /* وسط أفقياً */
+    text-align: center;
+  }
+
+  .portfolio__overlay > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+    .portfolio__header h2 {
+    font-size: 27px !important;   /* حجم أكبر من العادي */
+    line-height: 1.4 !important;
+  }
+
 }
