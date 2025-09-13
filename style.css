@@ -2247,4 +2247,23 @@ header nav ul li a:hover {
   padding: 0 !important;
   color: #fff;
 }
+/* 🟣 الزر داخل الظل (الجرافيك) */
+.portfolio__item.content .portfolio__overlay .btn-link {
+  font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+
+  /* ✨ إلغاء أي تباعد */
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+
+  margin: 0 !important;
+  padding: 6px 12px !important;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border-radius: 6px;
+  text-align: center;
+}
+
 }
