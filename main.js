@@ -151,3 +151,34 @@ if (loadMoreBtn) {
   }
 });
 
+
+// 🟣 Tap مرة أولى للظل، مرة ثانية لفتح الرابط
+document.addEventListener("DOMContentLoaded", () => {
+  const previewItems = document.querySelectorAll(".portfolio__item.preview-only");
+
+  previewItems.forEach(item => {
+    let tappedOnce = false;
+
+    item.addEventListener("click", function (e) {
+      const overlay = this.querySelector(".portfolio__overlay");
+
+      if (!tappedOnce) {
+        e.preventDefault(); // منع فتح الرابط
+        if (overlay) overlay.style.opacity = "1"; // أظهر الظل
+        tappedOnce = true;
+
+        // لو لمس خارج العنصر → رجّع الوضع
+        document.addEventListener("click", function reset(ev) {
+          if (!item.contains(ev.target)) {
+            if (overlay) overlay.style.opacity = "0";
+            tappedOnce = false;
+            document.removeEventListener("click", reset);
+          }
+        });
+      } else {
+        // ثاني لمسة → يفتح الرابط
+        window.location.href = item.getAttribute("href");
+      }
+    });
+  });
+});
