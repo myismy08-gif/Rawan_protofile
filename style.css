@@ -2231,4 +2231,20 @@ header nav ul li a:hover {
     padding: 0 !important;
     color: #fff;
   }
+  .portfolio__item.content .portfolio__overlay p {
+  font-family: "Tajawal", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+
+  /* ✨ إلغاء أي تباعد إضافي */
+  letter-spacing: 0 !important;
+  word-spacing: 0 !important;
+  text-align: center !important;
+  text-justify: auto !important;
+
+  margin: 0 0 6px 0 !important;
+  padding: 0 !important;
+  color: #fff;
+}
 }
