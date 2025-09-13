@@ -2103,5 +2103,17 @@ header nav ul li a:hover {
   text-decoration: none;
   color: #fff;
 }
+/* مبدئياً نخفي الظل */
+.portfolio__overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  cursor: pointer; /* يصير أي مكان بالظل قابل للضغط */
+}
+
+.portfolio__item.show-overlay .portfolio__overlay {
+  opacity: 1;
+  visibility: visible;
+}
 
 }

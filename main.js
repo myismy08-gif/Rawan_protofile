@@ -167,3 +167,64 @@ document.addEventListener("visibilitychange", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".portfolio__item");
+
+  items.forEach(item => {
+    item.addEventListener("click", function (e) {
+      // إذا ضغط على زر أو رابط جوه الكرت، ما يلغي الرابط
+      if (e.target.tagName.toLowerCase() === "a" || e.target.closest("a")) {
+        return;
+      }
+
+      // يشيل active من كل العناصر
+      items.forEach(i => i.classList.remove("active"));
+
+      // يضيف active للعنصر المضغوط
+      item.classList.add("active");
+    });
+  });
+});
+document.querySelectorAll('.portfolio__item').forEach(item => {
+  const overlay = item.querySelector('.portfolio__overlay');
+
+  // أول ضغطة: يظهر الظل
+  item.addEventListener('click', function (e) {
+    // لو الظل ظاهر بالفعل → ينقل للبيج
+    if (item.classList.contains('show-overlay')) {
+      window.location.href = "page.html"; 
+    } else {
+      e.preventDefault(); // منع النقل المباشر
+      item.classList.add('show-overlay');
+    }
+  });
+
+  // لو ضغط على أي مكان بالظل → ينقل
+  if (overlay) {
+    overlay.addEventListener('click', function () {
+      window.location.href = "page.html";
+    });
+  }
+});
+document.querySelectorAll('.portfolio__item').forEach(item => {
+  const overlay = item.querySelector('.portfolio__overlay');
+
+  // أول ضغطة: يظهر الظل
+  item.addEventListener('click', function (e) {
+    // لو الظل ظاهر بالفعل → ينقل للبيج
+    if (item.classList.contains('show-overlay')) {
+      window.location.href = "page.html"; 
+    } else {
+      e.preventDefault(); // منع النقل المباشر
+      item.classList.add('show-overlay');
+    }
+  });
+
+  // لو ضغط على أي مكان بالظل → ينقل
+  if (overlay) {
+    overlay.addEventListener('click', function () {
+      window.location.href = "page.html";
+    });
+  }
+});
