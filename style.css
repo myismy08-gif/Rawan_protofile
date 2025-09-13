@@ -2119,5 +2119,12 @@ header nav ul li a:hover {
     font-size: 27px !important;   /* حجم أكبر من العادي */
     line-height: 1.4 !important;
   }
+/* 🟣 توحيد خط النصوص والأزرار في قسم الجرافيك مع بقية التبويبات */
+.portfolio__item.content .portfolio__overlay p,
+.portfolio__item.content .portfolio__overlay .btn-link,
+.portfolio__item.social .portfolio__overlay p,
+.portfolio__item.social .portfolio__overlay .btn-link {
+  font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
 
 }
