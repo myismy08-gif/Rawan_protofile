@@ -2126,5 +2126,49 @@ header nav ul li a:hover {
 .portfolio__item.social .portfolio__overlay .btn-link {
   font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
 }
+ /* النص */
+  .portfolio__overlay p {
+    font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    margin: 0 0 10px 0 !important; /* ✨ مسافة أسفل النص */
+    color: #fff;
+  }
 
+  /* الزر */
+  .portfolio__overlay .btn-link {
+    font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+    display: inline-block;
+    margin-top: 6px !important;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    padding: 6px 12px !important;
+    border-radius: 6px;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-align: center;
+    transition: none; /* ما فيه لون موف */
+  }
+
+  .portfolio__overlay .btn-link:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+  }
+
+  /* التوسيط */
+  .portfolio__overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .portfolio__overlay > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
