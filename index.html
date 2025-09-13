@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>روان بدر — معرض أعمال شخصي</title>
+<!-- Tajawal -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<!-- Tailwind: set Tajawal as default -->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Theme + globals -->
+
+</link><link href="style.css" rel="stylesheet"/></head>
+<body data-theme="dev-elegant">
+<!-- Header -->
+<!-- Header -->
+<!-- ✅ الهيدر -->
+<header class="fixed top-0 left-0 z-50 w-full border-b border-[var(--divider)] bg-[var(--bg)] backdrop-blur">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+    <!-- Logo -->
+    <a class="flex items-center gap-3" href="#hero">
+      <img src="acc/logo.png" alt="شعار روان بدر" class="h-10 w-10 object-contain logo-switch">
+      <div>
+        <div class="text-xl font-extrabold leading-none text-black">روان بدر</div>
+        <div class="text-[11px] text-[var(--ink-dim)]">مصممة مواقع وتسويق رقمي</div>
+      </div>
+    </a>
+
+    <!-- Links + Dark Mode -->
+    <div class="flex items-center gap-6">
+      <ul class="hidden items-center gap-6 text-[15px] text-[var(--ink-dim)] md:flex">
+        <li><a class="hover:text-[var(--ink)]" href="#hero">الرئيسية</a></li>
+        <li><a class="hover:text-[var(--ink)]" href="#services">خدماتي</a></li>
+        <li><a class="hover:text-[var(--ink)]" href="#process">كيف أعمل</a></li>
+        <li><a class="hover:text-[var(--ink)]" href="#contact">تواصل</a></li>
+      </ul>
+      <button class="rounded-xl border border-[var(--divider)] px-3 py-2 text-sm font-semibold text-[var(--ink)] hover:bg-[var(--ink-dim)] transition" id="darkModeBtn" onclick="toggleDarkMode()">🌙</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero-animated hero-hue bg-[var(--bg)]" id="hero">
+<!-- أيقونات تسويق عائمة (خلف المحتوى) -->
+<div aria-hidden="true" class="hero-floaters">
+  <!-- Target -->
+  <div class="floater" style="--dur:15s; --rot:-12deg">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle></svg>
+  </div>
+
+  <!-- Megaphone -->
+  <div class="floater sm" style="--dur:13s; --rot:-6deg">
+    <svg viewBox="0 0 24 24"><path d="M3 10v4l8 3V7l-8 3z"></path><path d="M11 7l7-3v16l-7-3"></path><path d="M7 14v3a2 2 0 0 0 2 2h1"></path></svg>
+  </div>
+
+  <!-- Chart -->
+  <div class="floater" style="--dur:16s; --rot:8deg">
+    <svg viewBox="0 0 24 24"><polyline points="3,17 9,11 13,14 21,6"></polyline><line x1="3" x2="21" y1="20" y2="20"></line></svg>
+  </div>
+
+  <!-- Rocket -->
+  <div class="floater sm" style="--dur:17s; --rot:-14deg">
+    <svg viewBox="0 0 24 24"><path d="M14 3c3 0 7 4 7 7l-6 6-4-4 6-6z"></path><path d="M4 20l4-4"></path><path d="M7 21l3-3"></path><path d="M3 17l3-3"></path></svg>
+  </div>
+
+  <!-- Cursor -->
+  <div class="floater" style="--dur:12s; --rot:10deg">
+    <svg viewBox="0 0 24 24"><path d="M4 3l7 17 2-6 6-2L4 3z"></path></svg>
+  </div>
+
+  <!-- Calendar -->
+  <div class="floater sm" style="--dur:18s; --rot:-4deg">
+    <svg viewBox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><line x1="3" x2="21" y1="10" y2="10"></line><line x1="8" x2="8" y1="3" y2="7"></line><line x1="16" x2="16" y1="3" y2="7"></line></svg>
+  </div>
+</div>
+
+  <!-- المحتوى -->
+  <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 px-4 py-16 md:px-8 md:py-24">
+    <div class="text-center">
+      <h1 class="reveal-up text-4xl font-black leading-[1.15] sm:text-5xl md:text-6xl text-black">
+        من التخطيط <span class="mx-1 text-black">←</span> للتطوير <span class="mx-1 text-black">←</span>
+        <span class="text-[var(--accent)]">للنمو</span>
+      </h1>
+      <p class="reveal-up d2 mx-auto mt-10 md:mt-12 max-w-2xl text-lg md:text-xl leading-8 text-[var(--ink-dim)]">
+        أحوّل الفكرة إلى حملة تقود للنمو
+      </p>
+      <div class="reveal-up d3 mt-6 flex flex-wrap items-center justify-center gap-3">
+        <a class="inline-flex items-center justify-center rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-bold on-accent hover:opacity-90" href="#contact">ابدأ مشروعك</a>
+        <a class="inline-flex items-center justify-center rounded-xl border border-[var(--divider)] bg-[var(--surface)] px-5 py-3 text-sm font-semibold text-[var(--ink)] hover:opacity-90" href="#services">اطّلع على خدماتي</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- الرسائل الثلاث تحت الهيرو -->
+<section class="bg-[var(--bg-2)]">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-4 py-8 md:grid-cols-3 md:px-8">
+    <!-- بطاقة 1 -->
+    <div class="rounded-2xl border border-[var(--divider)] bg-[var(--surface)] p-5 text-right">
+      <div class="text-sm font-extrabold">تصميم مواقع وحلول رقمية</div>
+      <div class="mt-1 text-sm text-[var(--accent)]">
+        مواقع احترافية وصفحات هبوط، متاجر إلكترونية وتجارب مستخدم تدعم النمو والتحويل.
+      </div>
+    </div>
+    <!-- بطاقة 2 -->
+    <div class="rounded-2xl border border-[var(--divider)] bg-[var(--surface)] p-5 text-right">
+      <div class="text-sm font-extrabold">إعلانات مدفوعة وحملات تسويق</div>
+      <div class="mt-1 text-sm text-[var(--accent)]">
+        إدارة حملات على سناب، إنستغرام، تيك توك وGoogle Ads بتحكم كامل في الأداء والميزانيات.
+      </div>
+    </div>
+    <!-- بطاقة 3 -->
+    <div class="rounded-2xl border border-[var(--divider)] bg-[var(--surface)] p-5 text-right">
+      <div class="text-sm font-extrabold">تسويق رقمي وإدارة الحسابات</div>
+      <div class="mt-1 text-sm text-[var(--accent)]">
+        إدارة محتوى احترافي، التعاون مع مؤثرين، وخطط تزيد التفاعل وتبني علاقة أقوى مع العملاء.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- الخدمات -->
+<section class="relative overflow-hidden bg-[var(--bg)]" id="services">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-20 md:grid-cols-12">
+    <div class="order-1 md:order-1 md:col-span-5">
+      <h3 class="text-right text-5xl font-black leading-tight md:text-6xl">الحلول التي<br/>أقدّمها</h3>
+      <div class="relative mt-10">
+        <div class="relative aspect-[4/5] w-full rotate-6 overflow-hidden rounded-3xl border border-[var(--divider)] bg-[var(--surface)]">
+          <!-- صورة متناسقة + صبغة موف ناعمة -->
+          <img alt="لوحة تحليلات وحملات رقمية" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"/>
+          <div class="absolute inset-0 pointer-events-none mix-blend-multiply" style="opacity:.55;background:linear-gradient(135deg,
+              color-mix(in oklab, var(--accent) 28%, transparent),
+              color-mix(in oklab, var(--accent-600) 18%, transparent)
+            );">
+          </div>
+          <div class="accent-strip"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-2 md:order-2 md:col-span-7">
+      <div class="divide-y divide-[var(--divider)]">
+
+<!-- 01 -->
+<div class="grid items-start gap-6 py-6 md:grid-cols-12">
+  <div class="md:col-span-2 flex items-center justify-center 
+              text-4xl font-black portfolio-number">
+    01
+  </div>
+  <div class="md:col-span-4 text-right">
+    <h4 class="text-2xl font-extrabold">حلول التجارة<br/>الإلكترونية</h4>
+  </div>
+  <div class="md:col-span-6 flex items-start gap-3 text-[var(--ink-soft)]">
+    <svg class="mt-1 h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+      <path d="M20 4L6 18"/>
+      <path d="M6 10v8h8"/>
+    </svg>
+    <p class="text-right">
+      تطوير متاجر احترافية (WordPress/Woo & Shopify) مع تكامل زد/سلة، أنظمة دفع وشحن، وتحسين تجربة المبيعات عبر رفع متوسط قيمة الطلب (AOV) وتقليل تكلفة اكتساب العميل (CAC).
+    </p>
+  </div>
+</div>
+
+<!-- 02 -->
+<div class="grid items-start gap-6 py-6 md:grid-cols-12">
+  <div class="md:col-span-2 flex items-center justify-center 
+              text-4xl font-black portfolio-number">
+    02
+  </div>
+  <div class="md:col-span-4 text-right">
+    <h4 class="text-2xl font-extrabold">تصميم وتطوير<br/>المواقع الإلكترونية</h4>
+  </div>
+  <div class="md:col-span-6 flex items-start gap-3 text-[var(--ink-soft)]">
+    <svg class="mt-1 h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+      <path d="M20 4L6 18"/><path d="M6 10v8h8"/>
+    </svg>
+    <p class="text-right">
+      مواقع متكاملة وصفحات هبوط ومدونات عالية الأداء، سرعة وأمان وتجربة استخدام عربية واضحة، مع تحسين تقني للظهور في نتائج البحث.
+    </p>
+  </div>
+</div>
+
+<!-- 03 -->
+<div class="grid items-start gap-6 py-6 md:grid-cols-12">
+  <div class="md:col-span-2 flex items-center justify-center 
+              text-4xl font-black portfolio-number">
+    03
+  </div>
+  <div class="md:col-span-4 text-right">
+    <h4 class="text-2xl font-extrabold">إدارة الحملات<br/>الإعلانية</h4>
+  </div>
+  <div class="md:col-span-6 flex items-start gap-3 text-[var(--ink-soft)]">
+    <svg class="mt-1 h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+      <path d="M20 4L6 18"/><path d="M6 10v8h8"/>
+    </svg>
+    <p class="text-right">
+      إدارة حملات على سناب، إنستغرام، تيك توك وجوجل، مع إستراتيجية قمع مبيعات، تصميم إعلانات، اختبارات (A/B Testing)، إدارة ميزانيات، وقياس العائد على الاستثمار (ROI) والعائد على الإنفاق الإعلاني (ROAS) عبر تحليلات جوجل (GA4) ومدير العلامات (Tag Manager).
+    </p>
+  </div>
+</div>
+
+<!-- 04 -->
+<div class="grid items-start gap-6 py-6 md:grid-cols-12">
+  <div class="md:col-span-2 flex items-center justify-center 
+              text-4xl font-black portfolio-number">
+    04
+  </div>
+  <div class="md:col-span-4 text-right">
+    <h4 class="text-2xl font-extrabold">التسويق الرقمي<br/>وإدارة الحسابات</h4>
+  </div>
+  <div class="md:col-span-6 flex items-start gap-3 text-[var(--ink-soft)]">
+    <svg class="mt-1 h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+      <path d="M20 4L6 18"/>
+      <path d="M6 10v8h8"/>
+    </svg>
+    <p class="text-right">
+      بناء إستراتيجية محتوى، تقويم نشر، إدارة المجتمع والرسائل، تعاون مع مؤثرين ومحتوى مولّد من المستخدم (UGC)، قوالب تصميم جاهزة، وتقارير نمو لتعزيز العلاقة مع العملاء.
+    </p>
+  </div>
+</div>
+
+</section>
+<!-- سكشن معرض الأعمال + الفلترة -->
+<section class="portfolio">
+  <div class="portfolio__header text-center">
+    <h2><span>نماذج</span> <strong>من أعمالي</strong></h2>
+    <p class="mt-3 text-sm md:text-base text-[var(--ink-dim)]">
+      إدارة محتوى بصري وكتابي، تنسيق حملات مع مؤثرين، وبرمجة مواقع ومدونات متكاملة.
+    </p>
+  </div>
+
+  <!-- الفلترة -->
+  <div class="filter-tabs">
+    <a href="#" data-filter="web">برمجة وتطوير المواقع والمدونات</a>
+    <a href="#" data-filter="content" class="active">إدارة محتوى الحسابات والجرافيك</a>
+    <a href="#" data-filter="influencers">التعاون مع المؤثرين</a>
+  </div>
+
+<!-- العناصر -->
+<div class="portfolio__grid">
+
+  <!-- 🟣 إدارة محتوى الحسابات والجرافيك -->
+  <div class="portfolio__item content preview-only">
+    <a href="page.html">
+      <img src="acc/1.png" alt="بانر 1" class="img-switch">
+      <div class="portfolio__overlay overlay-742x278">
+        <div>
+          <p>إدارة الحسابات بالأفكار الإبداعية والتصميم — ابتكار محتوى بصري يعزز الهوية والتفاعل.</p>
+          <a href="page.html" class="btn-link mt-3 inline-block">للإنتقال للمعرض أضغط</a>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="portfolio__item content preview-only">
+    <a href="page.html">
+      <img src="acc/mode1.png" alt="تصميم 1">
+      <div class="portfolio__overlay overlay-293x520">
+        <div>
+          <p>تصاميم متناسبة مع المنتج — معالجة لونية وهوية بصرية متكاملة قابلة للتطوير.</p>
+          <a href="page.html" class="btn-link mt-3 inline-block">للإنتقال للمعرض أضغط</a>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- 🟣 التعاون مع مؤثرين -->
+  <div class="portfolio__item influencers preview-only">
+    <a href="page.html">
+      <div class="media-wrapper">
+        <img src="acc/mode4.png" alt="مؤثر 1">
+        <div class="portfolio__overlay overlay-293x520-influencer">
+          <div>
+            <p>التعاون مع المؤثرين والمشاهير — اختيار الأنسب للجمهور، إعداد المحتوى، وضبط الخطة.</p>
+            <a href="page.html" class="btn-link mt-3 inline-block">للإنتقال للمعرض أضغط</a>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="portfolio__item influencers preview-only">
+    <a href="page.html">
+      <div class="media-wrapper">
+        <img src="acc/fam112.png" alt="مؤثر 2">
+        <div class="portfolio__overlay overlay-293x520-fam">
+          <div>
+            <p>نماذج من الحملات مع مؤثرين — تنسيق المواعيد، هاشتاقات الحملة، وتتبع الأداء.</p>
+            <a href="page.html" class="btn-link mt-3 inline-block">للإنتقال للمعرض أضغط</a>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- 🟣 برمجة وتطوير المواقع والمدونات -->
+  <div class="portfolio__item web preview-only">
+    <a href="page.html">
+      <div class="media-wrapper">
+        <img src="acc/DR1.png" alt="موقع 1">
+        <div class="portfolio__overlay overlay-870x216">
+          <div>
+            <p>رفع موقع صممته على محرك البحث قوقل وظهور النتائج الأولى — برمجة واجهة واضحة وسريعة.</p>
+            <a href="page.html" class="btn-link mt-3 inline-block">للإنتقال للمعرض أضغط</a>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="portfolio__item web preview-only">
+    <a href="page.html">
+      <div class="media-wrapper">
+        <img src="acc/DR3.png" alt="موقع 2">
+        <div class="portfolio__overlay overlay-870x463">
+          <div>
+            <p>تصميم موقع وواجهة متوافقة مع الهوية البصرية — عرض مثالي على جميع الأجهزة.</p>
+            <a href="page.html" class="btn-link mt-3 inline-block">للإنتقال للمعرض أضغط</a>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+</div> <!-- نهاية .portfolio__grid -->
+
+  <!-- زر المزيد -->
+ <!-- زر المزيد -->
+<div class="more-btn">
+  <a href="page.html" class="btn-link">عرض المزيد</a>
+</div>
+
+</section>
+
+
+
+<section class="bg-[var(--bg)]" id="stack">
+  <div class="mx-auto max-w-7xl px-4 py-12 md:px-8">
+    <div class="text-center">
+      <h3 class="text-3xl md:text-4xl font-black">الأدوات المساعدة</h3>
+    </div>
+    <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+
+      <!-- منصّات التسويق -->
+      <div class="rounded-2xl border border-[var(--divider)] bg-[var(--surface)] p-5 text-center">
+        <div class="text-lg font-extrabold">منصّات التسويق</div>
+        <span class="mt-1 inline-block px-2 py-1 rounded-md text-[10px] font-bold bg-[var(--accent)]/10 text-[var(--accent)]">Marketing</span>
+        <div class="mt-3 flex flex-wrap justify-center gap-2">
+          <span class="chip">سناب</span><span class="chip">تيك توك</span><span class="chip">إنستغرام</span><span class="chip">X</span><span class="chip">Google Ads</span>
+        </div>
+      </div>
+
+      <!-- منصّات التطوير -->
+      <div class="rounded-2xl border border-[var(--divider)] bg-[var(--surface)] p-5 text-center">
+        <div class="text-lg font-extrabold">منصّات التطوير</div>
+        <span class="mt-1 inline-block px-2 py-1 rounded-md text-[10px] font-bold bg-[var(--accent)]/10 text-[var(--accent)]">Development</span>
+        <div class="mt-3 flex flex-wrap justify-center gap-2">
+          <span class="chip">WordPress</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Python</span>
+        </div>
+      </div>
+
+      <!-- حلول محلية -->
+      <div class="rounded-2xl border border-[var(--divider)] bg-[var(--surface)] p-5 text-center">
+        <div class="text-lg font-extrabold">حلول محلية</div>
+        <span class="mt-1 inline-block px-2 py-1 rounded-md text-[10px] font-bold bg-[var(--accent)]/10 text-[var(--accent)]">KSA</span>
+        <div class="mt-3 flex flex-wrap justify-center gap-2">
+          <span class="chip">زد</span><span class="chip">سلة</span><span class="chip">مدى</span><span class="chip">الشحن</span><span class="chip">بوابات الدفع</span>
+        </div>
+      </div>
+
+      <!-- أدوات التصميم والذكاء -->
+      <div class="rounded-2xl border border-[var(--divider)] bg-[var(--surface)] p-5 text-center">
+        <div class="text-lg font-extrabold">أدوات التصميم والذكاء</div>
+        <span class="mt-1 inline-block px-2 py-1 rounded-md text-[10px] font-bold bg-[var(--accent)]/10 text-[var(--accent)]">Design + AI</span>
+        <div class="mt-3 flex flex-wrap justify-center gap-2">
+          <span class="chip">Adobe</span>
+          <span class="chip">Photoshop</span>
+          <span class="chip">Illustrator</span>
+          <span class="chip">Canva</span>
+          <span class="chip">Figma</span>
+          <span class="chip">Freepik AI</span>
+          <span class="chip">OpenAI</span>
+          <span class="chip">ChatGPT</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-[var(--bg-2)]" id="services-grid">
+  <div class="mx-auto max-w-7xl px-4 py-16 md:px-8">
+    <div class="text-center">
+      <h3 class="text-4xl font-black">مهاراتي</h3>
+    </div>
+    <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+
+      <!-- إدارة الحملات والحسابات -->
+      <div class="rounded-3xl border border-[var(--divider)] bg-[var(--surface)] p-6 shadow text-center flex flex-col h-full items-center">
+        <div class="mb-2 text-[var(--accent)] font-bold text-xs">التسويق</div>
+        <h4 class="text-xl font-extrabold leading-8">إدارة الحملات والحسابات</h4>
+        <p class="mt-2 text-sm text-[var(--ink-dim)] max-w-[36ch]">
+          إدارة حسابات التواصل الاجتماعي، التعاون مع المؤثرين، وإطلاق حملات ممولة تُحقّق أهداف تسويقية ملموسة.
+        </p>
+     
+      </div>
+
+      <!-- تطوير المواقع -->
+      <div class="rounded-3xl border border-[var(--divider)] bg-[var(--surface)] p-6 shadow text-center flex flex-col h-full items-center">
+        <div class="mb-2 text-[var(--accent)] font-bold text-xs">التطوير</div>
+        <h4 class="text-xl font-extrabold leading-8">تطوير مواقع وصفحات هبوط</h4>
+        <p class="mt-2 text-sm text-[var(--ink-dim)] max-w-[36ch]">
+          تصميم صفحات تعريفية وهبوط، ربط النطاقات والاستضافة، تحسين لمحركات البحث (SEO) وتجربة استخدام واضحة وسلسة.
+        </p>
+      
+      </div>
+
+      <!-- التصميم والهوية -->
+      <div class="rounded-3xl border border-[var(--divider)] bg-[var(--surface)] p-6 shadow text-center flex flex-col h-full items-center">
+        <div class="mb-2 text-[var(--accent)] font-bold text-xs">التصميم</div>
+        <h4 class="text-xl font-extrabold leading-8">تصميم بصري وذكاء صناعي</h4>
+        <p class="mt-2 text-sm text-[var(--ink-dim)] max-w-[36ch]">
+          تصميمات احترافية لهويات بصرية، منشورات رقمية، واستخدام الذكاء الصناعي لإنتاج محتوى مؤثر ومخصص للجمهور المستهدف.
+        </p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="relative z-10" dir="rtl">
+  <!-- الشريط الخلفي (غامق) -->
+  <div class="outer outer-blue">
+    <div>
+      <div class="loop">
+        <div class="content"> نخطّط بوضوح | ننفّذ بدقة </div>
+      </div>
+    </div>
+  </div>
+  <!-- الشريط الأمامي (فاتح) -->
+  <div class="outer outer-green">
+    <div>
+      <div class="loop reverse">
+        <div class="content"> تجربة أجمل | نتائج تُقاس </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- قسم البروفايل -->
+<section class="hire-theme relative overflow-hidden" id="contact">
+  <!-- خلفية هادئة داكنة -->
+  <div aria-hidden="" class="absolute inset-0 -z-10">
+    <div class="absolute inset-0" style="background:
+             radial-gradient(70% 50% at 50% -10%, rgba(16,185,129,.10), transparent 60%),
+             linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%)"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-3xl px-6 py-24 text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold leading-relaxed">
+      أبتكر هويات رقمية وحلول تسويقية بتركيز على الجودة والتفاصيل.
+    </h2>
+
+     <!-- أزرار تواصل -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a class="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-6 py-3 text-sm font-bold on-accent hover:opacity-90" 
+         href="mailto:rawanrawan3399@gmail.com">
+        <!-- أيقونة بريد -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V6a2 2 0 00-2-2H3a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+        تواصل عبر البريد
+      </a>
+
+      <a class="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--divider)] bg-[var(--surface)] px-6 py-3 text-sm font-semibold text-[var(--ink)] hover:opacity-90" 
+         href="https://wa.me/966545580192">
+        <!-- أيقونة محادثة -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.83L3 20l1.83-3.66C3.67 15.2 3 13.66 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+        تواصل واتساب
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="footer-elegant">
+  <div class="topbar w-full"></div>
+  <div class="relative mx-auto max-w-7xl px-6 py-20 md:px-8">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-7">
+      <!-- تعريف -->
+      <div class="md:col-span-4">
+<div class="flex items-center gap-3">
+  <img src="acc/logo2.png" alt="شعار روان بدر" class="h-10 w-10 object-contain">
+  <div>
+            <div class="text-2xl font-extrabold leading-none">روان بدر</div>
+            <div class="text-[11px] text-[var(--ink-dim)]">خبرة رقمية في بناء الهوية وتحقيق النمو</div>
+          </div>
+        </div>
+        <p class="mt-5 max-w-md text-sm leading-7 text-[var(--ink-soft)]">
+          نعمل على تصميم واجهات وتجارب رقمية تُبنى على استراتيجية دقيقة ونتائج قابلة للقياس. بين التصميم، التسويق، والتطوير… نترك أثرًا ملموسًا.
+        </p>
+      </div>
+
+      <!-- تواصل -->
+     <!-- تواصل -->
+<div class="md:col-span-3">
+  <div class="text-lg font-extrabold">للتواصل</div>
+  <ul class="mt-4 space-y-2 text-sm text-[var(--ink-dim)]">
+    <li>الرياض – السعودية</li>
+    <li><a href="tel:+966545580192" class="hover:underline">0545580192</a></li>
+    <li><a href="mailto:rawanrawan3399@gmail.com" class="hover:underline">rawanrawan3399@gmail.com</a></li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <div class="border-t border-[var(--divider)] py-8 text-center text-xs text-[var(--ink-dim)]">
+    © روان بدر — خبرة رقمية تُبنى على التفاصيل وتُقاس بالنتائج
+  </div>
+</footer>
+
+<script src="main.js"></script></body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

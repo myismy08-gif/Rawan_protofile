@@ -1,0 +1,386 @@
+/* 🖋️ الأساسيات */
+body {
+  font-family: 'Tajawal', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* ✅ المقدمة */
+.portfolio-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin: 60px auto;
+  max-width: 1100px;
+  align-items: center;
+}
+.portfolio-header h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: hsl(0, 0%, 0%);    /* يعتمد على الثيم */
+}
+.portfolio-header p {
+  color: var(--ink-dim);    /* نصوص ثانوية */
+  line-height: 1.8;
+}
+
+/* ✅ الفلتر */
+.portfolio-filter {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0 auto 40px;
+  justify-content: center;
+  padding: 0;
+  font-size: 15px;
+}
+.portfolio-filter li {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-bottom: 2px solid transparent;
+  color: var(--ink-dim);
+  transition: 0.3s;
+}
+.portfolio-filter li.active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ✅ شبكة الأعمال */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+.portfolio-grid .item {
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+.portfolio-grid .item:hover {
+  transform: translateY(-5px);
+}
+.portfolio-grid .item img,
+.portfolio-grid .item iframe,
+.portfolio-grid .item video {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+/* ✅ الهيدر */
+header {
+  backdrop-filter: blur(8px);
+}
+header nav a {
+  color: var(--ink-dim);
+}
+header nav a:hover {
+  color: var(--ink);
+}
+.logo-switch {
+  transition: opacity 0.3s;
+}
+
+/* ✅ الفوتر */
+.footer-elegant {
+  background: var(--bg);
+  border-top: 1px solid var(--divider);
+}
+.footer-elegant .topbar {
+  height: 4px;
+  background: linear-gradient(135deg, #3b0a6f, #d3c4f3);
+}
+.footer-elegant p {
+  color: var(--ink-soft);
+}
+.footer-elegant a {
+  transition: color 0.3s;
+}
+.footer-elegant a:hover {
+  color: var(--ink);
+}
+
+/* 🌙 الوضع الداكن */
+body[data-theme="dev-elegant"] {
+  --bg: #0b1221;
+  --bg-2: #10192f;
+  --surface: #141f38;
+  --ink: #ffffff;
+  --ink-soft: hsla(0, 0%, 100%, 0.88);
+  --ink-dim: hsla(0, 0%, 100%, 0.65);
+  --divider: hsla(0, 0%, 100%, 0.12);
+  --accent: #7e449e;
+  --accent-600: #7e449e;
+
+  --font-main: 'Tajawal', sans-serif;
+  font-family: var(--font-main);
+}
+
+/* ☀️ الوضع الفاتح */
+body[data-theme="light"] {
+    --bg: #f3e8ff !important;
+  --bg-2: #fff !important;
+  --surface: #fff !important;
+  --ink: #1f2937 !important;
+  --ink-soft: rgba(31, 41, 55, 0.82) !important;
+  --ink-dim: rgba(0, 0, 0, 0.64) !important;
+  --divider: rgba(31, 41, 55, 0.12) !important;
+  --accent: #7e449e !important;
+  --accent-600: #7e449e !important;
+
+  --font-main: 'Tajawal', sans-serif;
+  font-family: var(--font-main);
+}
+
+
+/* ✅ روابط الهيدر */
+header nav a {
+  font-weight: 600;            /* خط أثقل */
+  color: var(--ink-dim);
+  transition: color 0.3s;
+}
+header nav a:hover {
+  color: var(--ink);
+}
+
+/* ✅ زر الوضع الداكن */
+#darkModeBtn {
+  border-radius: 12px;         /* حواف ناعمة */
+  border: 2px solid var(--divider);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 700;            /* أيقونة ثقيلة */
+  padding: 8px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* ظل خفيف */
+  transition: all 0.3s ease;
+}
+#darkModeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25); /* ظل أقوى عند الهوفر */
+}
+
+/* زر الوضع الداكن */
+#darkModeBtn {
+  border-radius: 12px;
+  border: 2px solid var(--divider);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 700;
+  padding: 8px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* 👇 تخصيص للوضع الغامق */
+body[data-theme="dev-elegant"] #darkModeBtn {
+  border-color: #7c3aed;   /* موف */
+}
+
+
+
+/* افتراضياً: الشعار الفاتح ظاهر */
+.logo-light { display: block; }
+.logo-dark { display: none; }
+
+/* إذا الوضع غامق: نخفي الفاتح ونظهر الغامق */
+body[data-theme="dev-elegant"] .logo-light { display: none; }
+body[data-theme="dev-elegant"] .logo-dark { display: block; }
+
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  text-align: center;
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80vh;
+  margin: auto;
+  display: none;
+  border-radius: 8px;
+}
+.lightbox .close {
+  position: absolute;
+  top: 20px; right: 35px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+}
+  /* الهيدر في الوضع الفاتح أبيض */
+body[data-theme="light"] header {
+  background: #ffffff;    /* أبيض */
+  border-bottom: 1px solid var(--divider); /* خط فاصل بسيط */
+}
+
+
+
+/* الوضع الفاتح */
+body[data-theme="light"] .portfolio-header h2,
+body[data-theme="light"] .portfolio-header p {
+  color: #000; /* أسود */
+}
+
+/* الوضع الغامق */
+body[data-theme="dev-elegant"] .portfolio-header h2,
+body[data-theme="dev-elegant"] .portfolio-header p {
+  color: #fff; /* أبيض */
+}
+
+/* تحسين النصوص الثانوية بالفاتح والغامق */
+body[data-theme="light"] .portfolio-header .intro-text p {
+  color: rgba(0,0,0,0.72); /* رمادي غامق */
+}
+body[data-theme="dev-elegant"] .portfolio-header .intro-text p {
+  color: rgba(255,255,255,0.75); /* رمادي فاتح */
+}
+
+/* الوضع الفاتح */
+body[data-theme="light"] header .brand-name {
+  color: #000; /* أسود */
+}
+
+/* الوضع الغامق */
+body[data-theme="dev-elegant"] header .brand-name {
+  color: #fff; /* أبيض */
+  /* أو لو تحب بالموف الأساسي للهوية: */
+  /* color: var(--accent); */
+}
+
+@media (max-width: 768px) {
+
+  .portfolio-header {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 20px !important;
+    margin: 30px auto !important;
+    padding: 0 16px !important;
+  }
+
+  .portfolio-header .title-box {
+    order: 1; /* العنوان فوق */
+  }
+
+  .portfolio-header .intro-text {
+    order: 2; /* النصوص التوضيحية تحت */
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  .portfolio-header h2 {
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+  }
+
+  .portfolio-header p {
+    font-size: 14px !important;
+  }
+
+ .portfolio-filter {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;  /* عمودين */
+    gap: 15px !important;
+    justify-items: center; /* يوسّط النصوص داخل كل عمود */
+  }
+
+  .portfolio-filter li {
+    font-size: 15px !important;
+    padding: 6px 10px !important;
+    text-align: center !important;
+    border: none !important;
+  }
+
+  .portfolio-filter li.active {
+    color: var(--accent) !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid var(--accent) !important;
+  }
+/* ✅ مقدمة الصفحة */
+.portfolio-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;  /* يوسّط المحتوى */
+  text-align: center !important;
+  gap: 18px !important;
+  margin: 30px auto !important;
+  padding: 0 16px !important;
+  max-width: 700px; /* يمنع التمدد بعرض كبير */
+}
+
+.portfolio-header .title-box {
+  order: 1;
+}
+
+.portfolio-header .intro-text {
+  order: 2;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  color: var(--ink-dim); /* يخلي النصوص الثانوية أوضح */
+  max-width: 90%;        /* يضبط عرض النص */
+  margin: 0 auto;        /* يوسّط النص */
+}
+
+.portfolio-header h2 {
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 4px !important;
+}
+
+.portfolio-header p {
+  font-size: 14px !important;
+  margin: 0 !important;
+}
+
+/* ✅ الفلترة */
+.portfolio-filter {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr); /* عمودين ثابتين */
+  gap: 12px !important;
+  justify-items: center;
+  margin: 20px auto !important;
+  max-width: 400px; /* يمنع أن التبويبات تمتد بعرض الشاشة كلها */
+}
+
+.portfolio-filter li {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 6px 8px !important;
+  text-align: center !important;
+  border: none !important;
+  color: var(--ink-dim) !important;
+  transition: all 0.3s ease;
+}
+
+.portfolio-filter li.active {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid var(--accent) !important;
+}
+  .portfolio-header .intro-text {
+    display: none !important;
+  }
+.portfolio-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;   /* يوسّط أفقي */
+  justify-content: center !important; /* يوسّط عمودي */
+  text-align: center !important;
+  gap: 10px !important;
+  margin: 40px auto !important;
+  padding: 20px 16px !important;
+}
+}

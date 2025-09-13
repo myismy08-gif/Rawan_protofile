@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>روان بدر — كل الأعمال</title>
+
+  <!-- Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="page.css"/>
+</head>
+<body class="page-gallery" data-theme="dev-elegant">
+
+<!-- ✅ الهيدر -->
+<header class="sticky top-0 z-40 border-b border-[var(--divider)] bg-transparent backdrop-blur">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+    <!-- Logo -->
+<a class="flex items-center gap-3" href="index.html#hero">
+  <img src="acc/logo.png" alt="شعار روان بدر" class="h-10 w-10 object-contain logo logo-light">
+  <img src="acc/logo2.png" alt="شعار روان بدر" class="h-10 w-10 object-contain logo logo-dark">
+  <div>
+<div class="text-xl font-extrabold leading-none brand-name">روان بدر</div>
+    <div class="text-[11px] text-[var(--ink-dim)]">مصممة مواقع وتسويق رقمي</div>
+  </div>
+</a>
+
+
+    <!-- Links + Dark Mode -->
+    <div class="flex items-center gap-6">
+      <ul class="hidden items-center gap-6 text-[15px] text-[var(--ink-dim)] md:flex">
+        <li><a class="hover:text-[var(--ink)]" href="index.html#hero">الرئيسية</a></li>
+        <li><a class="hover:text-[var(--ink)]" href="index.html#services">خدماتي</a></li>
+        <li><a class="hover:text-[var(--ink)]" href="index.html#process">كيف أعمل</a></li>
+        <li><a class="hover:text-[var(--ink)]" href="index.html#contact">تواصل</a></li>
+      </ul>
+      <!-- زر الوضع الداكن -->
+      <button class="rounded-xl border border-[var(--divider)] px-3 py-2 text-sm font-semibold text-[var(--ink)] hover:bg-[var(--ink-dim)] transition" id="darkModeBtn" onclick="toggleDarkMode()">
+        🌙
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ✅ المقدمة -->
+<section class="portfolio-area">
+  <div class="portfolio-header">
+    <div class="title-box">
+      <h2 class="text-black dark:text-white">نماذج من أعمالي السابقة</h2>
+      <p class="text-[var(--ink-dim)] dark:text-white">لمحة عن بعض الأعمال في التصميم والتطوير الرقمي.</p>
+    </div>
+    <div class="intro-text">
+      <p class="text-black dark:text-white">
+        أتنقل بين التصميم والبناء الرقمي، من واجهات المواقع
+        إلى المواد البصرية، مع الحرص على وضوح وتجربة سلسة.
+      </p>
+      <p class="text-black dark:text-white">
+        هذه النماذج تمثل خطوات متنوعة في مجالات التصميم والتطوير،
+        وتعرض أساليب مختلفة في تنفيذ الأفكار وتحويلها إلى واقع.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- 🔹 نسخة الكل -->
+
+<ul class="portfolio-filter">
+  <li class="active" data-filter="*">الكل</li>
+  <li data-filter=".web">برمجة وتصميم المواقع</li>
+  <li data-filter=".social">إدارة الحسابات والجرافيك</li>
+  <li data-filter=".influencers">التعاون مع المؤثرين والمشاهير</li>
+</ul>
+
+<div class="portfolio-grid">
+
+  <!-- 🔹 نسخة الكل -->
+  <!-- مواقع -->
+
+
+<!-- 🔹 أول موقع (تم رفعه وظهر في نتائج قوقل) -->
+<!-- 🔹 أول موقع (تم رفعه وظهر في نتائج قوقل) -->
+<!-- 🔹 أول موقع (تم رفعه وظهر في نتائج قوقل) -->
+<!-- 🔹 أول موقع (تم رفعه وظهر في نتائج قوقل) -->
+<div class="item all web relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/DR1.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/DR1.png" alt="أول تجربة تصميم موقع" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 
+                flex flex-col items-center justify-center text-center text-white transition">
+      <p class="mb-3">تصميم ورفع موقع على محرك بحث قوقل وظهر في النتائج الأولية</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+
+<!-- 🔹 إدارة الحسابات -->
+<div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/2.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/2.png" alt="تصاميم للموقع الإلكتروني أو بوست إعلاني" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 
+                flex flex-col items-center justify-center text-center text-white transition">
+      <p class="mb-3">إدارة محتوى الحساب</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<!-- 🔹 موقع طبي -->
+<div class="item all web relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/DR3.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/DR3.png" alt="تصميم موقع طبي" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 
+                flex flex-col items-center justify-center text-center text-white transition">
+      <p class="mb-3">تصميم أحد المواقع الطبية</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+
+<!-- 🔹 تصميم فيديو إعلاني (خاتم) -->
+<div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/O2.mp4" target="_blank" rel="noopener noreferrer">
+    <video src="acc/O2.mp4" poster="acc/O2.jpg" class="w-full h-auto" controls></video>
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">تصميمي للستوري إعلاني عن منتج بفكرة إبداعية</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+
+<!-- فيديو إعلان -->
+<div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/video5.mp4" target="_blank" rel="noopener noreferrer">
+    <video src="acc/video5.mp4" poster="acc/15.jpeg" controls class="w-full h-auto"></video>
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">فيديو إعلاني</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+  <!-- جرافيك -->
+ 
+
+
+  <div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/banr2.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/banr2.png" alt="تصاميم للموقع الإلكتروني أو بوست إعلاني" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+<p class="mb-2">تصميم بانر للموقع الإلكتروني</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<!-- 🔹 جرافيك (Banrs) -->
+
+
+
+
+<div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/banr5.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/banr5.png" alt="تصاميم للموقع الإلكتروني أو بوست إعلاني" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+<p class="mb-2">تصميم بانر للموقع الإلكتروني</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/banr6.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/banr6.png" alt="تصاميم للموقع الإلكتروني أو بوست إعلاني" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+<p class="mb-2">تصميم بانر للموقع الإلكتروني</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/banr7.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/banr7.png" alt="تصاميم للموقع الإلكتروني أو بوست إعلاني" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+<p class="mb-2">تصميم بانر للموقع الإلكتروني</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/banr8.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/banr8.png" alt="تصاميم للموقع الإلكتروني أو بوست إعلاني" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+<p class="mb-2">تصميم بانر للموقع الإلكتروني</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/banr9.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/banr9.png" alt="تصاميم للموقع الإلكتروني أو بوست إعلاني" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+<p class="mb-2">تصميم بانر للموقع الإلكتروني</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+
+  <!-- كرر نفس النمط لبانرات banr1 إلى banr10 -->
+  <div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+    <a href="acc/banr1.png" target="_blank" rel="noopener noreferrer">
+      <img src="acc/banr1.png" alt="تصاميم للموقع الإلكتروني أو بوست إعلاني" class="w-full h-auto">
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+<p class="mb-2">تصميم بانر للموقع الإلكتروني</p>
+        <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- فيديوهات -->
+<!-- نسخة قسم الجرافيك (تظهر في الكل + الجرافيك) -->
+<div class="item all web social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/video1.mp4" target="_blank" rel="noopener noreferrer">
+    <video src="acc/video1.mp4" poster="acc/11.jpeg" class="w-full h-auto" controls></video>
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">فيديو إعلاني للمتجر الإلكتروني تم تصميمه بالكامل</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+
+
+<div class="item all social relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/video4.mp4" target="_blank" rel="noopener noreferrer">
+    <video src="acc/video4.mp4" poster="acc/14.jpeg" controls class="w-full h-auto"></video>
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">فيديو إعلاني</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+
+
+  <!-- مؤثرين -->
+  <div class="item all influencers relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+    <a href="acc/fam112.png" target="_blank" rel="noopener noreferrer">
+      <img src="acc/fam112.png" alt="Influencer Collaboration" class="w-full h-auto">
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+        <p class="mb-2">Influencer Collaboration</p>
+        <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+      </div>
+    </a>
+  </div>
+
+
+
+  
+  <div class="item all influencers relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+    <a href="acc/mode2.png" target="_blank" rel="noopener noreferrer">
+      <img src="acc/mode2.png" alt="Influencer Collaboration" class="w-full h-auto">
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+        <p class="mb-2">Influencer Collaboration</p>
+        <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+      </div>
+    </a>
+  </div>
+
+
+
+  
+  <!-- 🔹 آخر 9 صور -->
+
+<!-- fam (2).jpeg -->
+<div class="item all influencers relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/fam (2).jpeg" target="_blank" rel="noopener noreferrer">
+    <img src="acc/fam (2).jpeg" alt="Influencer Collaboration" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">Influencer Collaboration</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+
+<!-- fam (3).jpeg -->
+<div class="item all influencers relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/fam (3).jpeg" target="_blank" rel="noopener noreferrer">
+    <img src="acc/fam (3).jpeg" alt="Influencer Collaboration" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">Influencer Collaboration</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<!-- fam (4).jpeg -->
+
+<!-- fam (5).jpeg -->
+<div class="item all influencers relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/fam (5).jpeg" target="_blank" rel="noopener noreferrer">
+    <img src="acc/fam (5).jpeg" alt="Influencer Collaboration" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">Influencer Collaboration</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<!-- fam11 (2).png -->
+<div class="item all influencers relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/fam11 (2).png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/fam11 (2).png" alt="Influencer Collaboration" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">Influencer Collaboration</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<!-- fam112.png -->
+
+
+<!-- DR3.png -->
+
+
+<!-- fam (1).jpeg -->
+<div class="item all influencers relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/fam (1).jpeg" target="_blank" rel="noopener noreferrer">
+    <img src="acc/fam (1).jpeg" alt="Influencer Collaboration" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">Influencer Collaboration</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+<!-- 🔹 آخر دفعة -->
+
+<!-- صور عروض العبايات -->
+
+
+
+<!-- صور مؤثرين (rmode + fam) -->
+
+<div class="item all influencers relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/rmode2.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/rmode2.png" alt="Influencer Collaboration" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">Influencer Collaboration</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+
+
+
+  
+<div class="item all influencers relative shadow-lg hover:shadow-xl transition rounded-xl overflow-hidden group">
+  <a href="acc/mode4.png" target="_blank" rel="noopener noreferrer">
+    <img src="acc/mode4.png" alt="عباية بطابع فاخر" class="w-full h-auto">
+    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white transition">
+      <p class="mb-2">Influencer Collaboration</p>
+      <span class="px-3 py-1 bg-[var(--accent)] rounded-md text-xs">اضغط هنا</span>
+    </div>
+  </a>
+</div>
+
+
+<!-- 🖤 موديلات -->
+
+
+
+
+
+
+
+
+
+  <!-- كرر نفس النمط لـ mode3, mode4, fam(1), fam(2) -->
+
+</div>
+
+<!-- ✅ الفوتر -->
+<footer class="footer-elegant mt-20">
+  <div class="topbar w-full"></div>
+  <div class="relative mx-auto max-w-7xl px-6 py-20 md:px-8">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-7">
+      <!-- تعريف -->
+      <div class="md:col-span-4">
+        <div class="flex items-center gap-3">
+          <img src="acc/logo.png" alt="شعار روان بدر" class="h-10 w-10 object-contain logo logo-light">
+          <img src="acc/logo2.png" alt="شعار روان بدر" class="h-10 w-10 object-contain logo logo-dark">
+          <div>
+            <div class="text-2xl font-extrabold leading-none">روان بدر</div>
+            <div class="text-[11px] text-[var(--ink-dim)]">خبرة رقمية في بناء الهوية وتحقيق النمو</div>
+          </div>
+        </div>
+        <p class="mt-5 max-w-md text-sm leading-7 text-[var(--ink-soft)]">
+          نعمل على تصميم واجهات وتجارب رقمية تُبنى على استراتيجية دقيقة ونتائج قابلة للقياس. بين التصميم، التسويق، والتطوير… نترك أثرًا ملموسًا.
+        </p>
+      </div>
+
+      <!-- تواصل -->
+      <div class="md:col-span-3">
+        <div class="text-lg font-extrabold">للتواصل</div>
+        <ul class="mt-4 space-y-2 text-sm text-[var(--ink-dim)]">
+          <li>الرياض – السعودية</li>
+          <li><a href="tel:+966545580192" class="hover:underline">0545580192</a></li>
+          <li><a href="mailto:rawanrawan3399@gmail.com" class="hover:underline">rawanrawan3399@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-[var(--divider)] py-8 text-center text-xs text-[var(--ink-dim)]">
+    © روان بدر — خبرة رقمية تُبنى على التفاصيل وتُقاس بالنتائج
+  </div>
+</footer>
+
+    
+
+<!-- ✅ سكربت الفلترة -->
+<script>
+
+function toggleDarkMode() {
+  const body = document.body;
+  const btn = document.getElementById("darkModeBtn");
+
+  if (body.getAttribute("data-theme") === "light") {
+    body.setAttribute("data-theme", "dev-elegant");
+    btn.textContent = "🌙";
+  } else {
+    body.setAttribute("data-theme", "light");
+    btn.textContent = "☀️";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButtons = document.querySelectorAll(".portfolio-filter li");
+  const items = Array.from(document.querySelectorAll(".portfolio-grid .item"));
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // شيل active من الكل
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter").replace(".", "");
+
+      let matching;
+      if (filter === "*") {
+        // "الكل" → استبعد العناصر اللي عندها hide-in-all
+        matching = items.filter(it => !it.classList.contains("hide-in-all"));
+      } else {
+        // باقي التبويبات
+        matching = items.filter(it => it.classList.contains(filter));
+      }
+
+      // اخفي الكل بالأول
+      items.forEach(it => it.style.display = "none");
+
+      // طلع المطابق
+      matching.forEach(it => it.style.display = "block");
+    });
+  });
+});
+</script>
+
+
+
+</body>
+</html>

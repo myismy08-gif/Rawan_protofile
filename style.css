@@ -1,0 +1,2067 @@
+:root {
+  --font-sans:
+    "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ink: #111827;
+  --brand-1: #3b0a6f;
+  --brand-2: #d3c4f3;
+  --accent: var(--ink);
+  --accent-600: #102a50;
+}
+body,
+html {
+  font-family: var(--font-sans) !important;
+}
+button {
+  font: inherit !important;
+}
+:root {
+  --bg: #fff !important;
+  --bg-2: #fff !important;
+  --surface: #fff !important;
+  --ink: #111 !important;
+  --ink-soft: hsla(0, 0%, 7%, 0.82) !important;
+  --ink-dim: hsla(0, 0%, 7%, 0.64) !important;
+  --divider: rgba(0, 0, 0, 0.12) !important;
+  --accent: #8b5cf6 !important;
+  --accent-600: #7c3aed !important;
+  --hero-main: none !important;
+  --hero-drift: none !important;
+}
+body {
+  background-color: var(--bg) !important;
+  color: var(--ink) !important;
+}
+header {
+  background-color: color-mix(
+    in oklab,
+    var(--bg-2) 80%,
+    transparent
+  ) !important;
+  border-color: var(--divider) !important;
+}
+.chip {
+  background: var(--surface) !important;
+  border: 1px solid var(--divider) !important;
+  color: var(--ink) !important;
+}
+.on-accent {
+  color: #fff !important;
+}
+.shadow,
+0 {
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12) !important;
+}
+[data-theme="dev-elegant"] {
+  --bg: #f3e8ff !important;
+  --bg-2: #fff !important;
+  --surface: #fff !important;
+  --ink: #1f2937 !important;
+  --ink-soft: rgba(31, 41, 55, 0.82) !important;
+  --ink-dim: rgba(31, 41, 55, 0.64) !important;
+  --divider: rgba(31, 41, 55, 0.12) !important;
+  --accent: #7e449e !important;
+  --accent-600: #7e449e !important;
+  --hero-main:
+    radial-gradient(80% 60% at 60% 0%, #ede9fe, transparent),
+    radial-gradient(70% 60% at 20% 0%, #f5f3ff, transparent) !important;
+  --hero-drift:
+    radial-gradient(
+      50% 40% at 20% 10%,
+      rgba(139, 92, 246, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      45% 35% at 80% 0%,
+      rgba(124, 58, 237, 0.14),
+      transparent 60%
+    ) !important;
+}
+#hero {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, #3b0a6f 16%, #fff 84%),
+    color-mix(in oklab, #d3c4f3 12%, #fff 88%) 52%,
+    #fff
+  ) !important;
+  position: relative;
+  z-index: 0;
+}
+.hero-animated {
+  overflow: hidden;
+  position: relative;
+}
+.hero-animated:before {
+  animation: drift 1000s ease-in-out infinite alternate;
+  background:
+    radial-gradient(
+      60% 60% at 20% 10%,
+      rgba(126, 68, 158, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      50% 50% at 80% 20%,
+      rgba(124, 58, 237, 0.13),
+      transparent 60%
+    ),
+    radial-gradient(
+      42% 42% at 40% 90%,
+      rgba(124, 58, 237, 0.1),
+      transparent 60%
+    );
+  content: "";
+  filter: blur(24px);
+  inset: -30%;
+  position: absolute;
+  z-index: -1;
+}
+@keyframes drift {
+  0% {
+    transform: translateZ(0) scale(1) rotate(0deg);
+  }
+  to {
+    transform: translate3d(0, -24px, 0) scale(1.05) rotate(-2deg);
+  }
+}
+.hero-hue {
+  animation: hueShift 16s linear infinite alternate;
+}
+@keyframes hueShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-18deg);
+  }
+}
+.reveal-up {
+  animation: reveal 0.7s ease forwards;
+  opacity: 0;
+  transform: translateY(12px);
+}
+.reveal-up.d2 {
+  animation-delay: 0.15s;
+}
+.reveal-up.d3 {
+  animation-delay: 0.3s;
+}
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes underlineGrow {
+  to {
+    width: 100%;
+  }
+}
+.hero-floaters {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+.hero-floaters .floater {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+  display: grid;
+  height: 56px;
+  opacity: 0.9;
+  place-items: center;
+  position: absolute;
+  width: 56px;
+  --rot: -10deg;
+  --dur: 14s;
+  animation: sway var(--dur) ease-in-out infinite;
+}
+.hero-floaters .floater svg {
+  height: 26px;
+  width: 26px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.8;
+}
+.hero-floaters .sm {
+  border-radius: 12px;
+  height: 46px;
+  width: 46px;
+}
+.hero-floaters .sm svg {
+  height: 22px;
+  width: 22px;
+}
+@keyframes sway {
+  0%,
+  to {
+    transform: translate(0) rotate(var(--rot));
+  }
+  50% {
+    transform: translate(10px, -14px) rotate(calc(var(--rot) + 8deg));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-floaters .floater {
+    animation: none;
+  }
+}
+.footer-elegant {
+  position: relative;
+  --bg: #0f172a !important;
+  --surface: #0f172a !important;
+  --bg-2: #111827 !important;
+  --ink: #fff !important;
+  --ink-soft: hsla(0, 0%, 100%, 0.92) !important;
+  --ink-dim: hsla(0, 0%, 100%, 0.76) !important;
+  --divider: hsla(0, 0%, 100%, 0.14) !important;
+}
+.footer-elegant .topbar {
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--accent) 70%, #000),
+    color-mix(in oklab, var(--accent-600) 60%, #000)
+  );
+  height: 3px;
+  opacity: 0.35;
+}
+.footer-elegant:before {
+  background:
+    radial-gradient(
+      80% 60% at 70% -10%,
+      hsla(0, 0%, 100%, 0.06),
+      transparent 60%
+    ),
+    radial-gradient(60% 40% at 20% 0, hsla(0, 0%, 100%, 0.05), transparent 60%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+.footer-elegant a {
+  color: var(--ink-dim);
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+.footer-elegant a:hover {
+  color: #fff;
+  opacity: 1;
+}
+.footer-elegant {
+  background-color: var(--bg) !important;
+  color: var(--ink) !important;
+}
+.footer-elegant .mx-auto.max-w-7xl {
+  padding-bottom: 6rem;
+  padding-top: 6rem;
+}
+.hire-theme {
+  --bg: #0f172a;
+  --bg-2: #111827;
+  --surface: #111827;
+  --ink: #e5e7eb;
+  --ink-soft: rgba(229, 231, 235, 0.85);
+  --ink-dim: rgba(229, 231, 235, 0.7);
+  --divider: hsla(0, 0%, 100%, 0.14);
+  --accent: #7e449e;
+  --accent-600: #7e449e;
+  background: var(--bg);
+  color: var(--ink);
+}
+.hire-theme .chip {
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  border: 1px solid var(--divider);
+  color: var(--ink);
+}
+[data-theme="dark-navy"] {
+  --bg: #0b1221;
+  --bg-2: #10192f;
+  --surface: #141f38;
+  --ink: #fff;
+  --ink-soft: hsla(0, 0%, 100%, 0.88);
+  --ink-dim: hsla(0, 0%, 100%, 0.65);
+  --divider: hsla(0, 0%, 100%, 0.12);
+  --accent: #7e449e;
+  --accent-600: #7e449e;
+}
+[data-theme="dark-navy"] p.reveal-up.d2 {
+  color: #000 !important;
+}
+.outer {
+  direction: rtl;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 98vw;
+}
+.outer div {
+  display: inline-block;
+}
+.loop {
+  animation: loop-anim 12s linear infinite;
+  white-space: nowrap;
+}
+.content {
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  padding: 0 0.8em;
+}
+@media (max-width: 767px) {
+  .content {
+    font-size: 2.5rem;
+  }
+  .loop {
+    animation: loop-anim 5s linear infinite;
+  }
+  .loop.reverse {
+    animation: loop-anim-reverse 5s linear infinite;
+  }
+}
+@keyframes loop-anim {
+  0% {
+    margin-right: 0;
+  }
+  to {
+    margin-right: -50%;
+  }
+}
+@keyframes loop-anim-reverse {
+  0% {
+    margin-right: -50%;
+  }
+  to {
+    margin-right: 0;
+  }
+}
+.outer-blue {
+  background-color: #6a0dad;
+  transform: rotate(3deg);
+  z-index: 1;
+}
+.outer-blue,
+.outer-green {
+  padding: 3rem 0;
+  position: relative;
+}
+.outer-green {
+  background-color: #8a2be2;
+  margin-top: -2.8rem;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+.outer-green .loop {
+  animation: loop-anim-reverse 12s linear infinite;
+}
+.outer-blue,
+.outer-green {
+  left: 10vw;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  position: relative;
+  width: 111%;
+}
+body,
+html {
+  overflow-x: hidden;
+}
+section.portfolio:before {
+  background: radial-gradient(
+    circle,
+    var(--accent-light-2, #c4b5fd),
+    transparent 70%
+  );
+}
+.portfolio__header {
+  margin-bottom: 60px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+.portfolio__header h2 {
+  background: linear-gradient(
+    135deg,
+    var(--accent-light),
+    var(--accent-light-2)
+  );
+}
+.portfolio__header h2 span {
+  background: linear-gradient(135deg, #000, var(--accent-light));
+}
+.portfolio__grid {
+  gap: 90px;
+  perspective: 1000px;
+  position: relative;
+  z-index: 1;
+}
+.portfolio__item {
+  background: #fdfbff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  opacity: 0;
+  transform: rotateX(90deg);
+  transform-origin: bottom center;
+  transition:
+    transform 0.1s ease,
+    opacity 0.1s ease;
+  width: 100%;
+}
+.portfolio__item.show {
+  opacity: 1;
+  transform: rotateX(0);
+}
+.hidden {
+  display: none;
+}
+.more-btn {
+  margin-top: 50px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+.more-btn button {
+  background: linear-gradient(
+    135deg,
+    var(--accent-light),
+    var(--accent-light-2)
+  );
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 14px 40px;
+  transition: 0.3s ease;
+}
+.more-btn button:hover {
+  box-shadow: 0 5px 20px rgba(106, 17, 203, 0.3);
+  transform: scale(1.07);
+}
+@media (prefers-color-scheme: dark) {
+  section.portfolio {
+    background: linear-gradient(
+      180deg,
+      var(--bg-dark-start),
+      var(--bg-dark-mid),
+      var(--bg-dark-end)
+    );
+  }
+  section.portfolio:before {
+    background: radial-gradient(circle, var(--accent-dark-2), transparent 70%);
+  }
+  section.portfolio:after {
+    background: radial-gradient(circle, var(--accent-dark), transparent 70%);
+  }
+  .portfolio__header h2 {
+    background: linear-gradient(
+      135deg,
+      var(--accent-dark),
+      var(--accent-dark-2)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .portfolio__header h2 span {
+    background: linear-gradient(135deg, #fff, var(--accent-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .more-btn button {
+    background: linear-gradient(
+      135deg,
+      var(--accent-dark),
+      var(--accent-dark-2)
+    );
+  }
+}
+:root {
+  --accent-light: #8b5cf6;
+  --accent-light-2: #a78bfa;
+  --bg-dark-start: #1e1b4b;
+  --bg-dark-end: #4c1d95;
+  --accent-dark: #c084fc;
+  --accent-dark-2: #a78bfa;
+}
+section.portfolio:before {
+  background: radial-gradient(circle, var(--accent-light-2), transparent 70%);
+  height: 280px;
+  left: -120px;
+  top: -100px;
+  width: 280px;
+}
+section.portfolio:after {
+  background: radial-gradient(circle, var(--accent-light), transparent 70%);
+  bottom: -100px;
+  height: 300px;
+  right: -100px;
+  width: 300px;
+}
+.filter-tabs {
+  gap: 30px;
+  margin: 20px auto;
+  padding-bottom: 10px;
+}
+.filter-tabs a {
+  color: #000;
+  transition: 0.3s;
+}
+.filter-tabs {
+  border-bottom: 2px solid #000;
+}
+.filter-tabs a.active:after {
+  bottom: -8px;
+}
+.filter-tabs {
+  border-bottom: none;
+}
+.filter-tabs a:hover {
+  color: var(--accent);
+}
+.filter-tabs a.active:after {
+  border-radius: 3px;
+}
+.filter-tabs a.active {
+  color: var(--accent);
+  position: relative;
+}
+.filter-tabs a.active:after {
+  background-color: var(--accent);
+}
+section.portfolio {
+  animation: gradientMove 16s ease infinite;
+  background: linear-gradient(
+    180deg,
+    var(--bg-light-start),
+    var(--bg-light-end)
+  );
+  background-size: 400% 400%;
+  overflow: hidden;
+  padding: 100px 5%;
+  position: relative;
+}
+:root {
+  --bg-light-start: #f9f7ff;
+  --bg-light-end: #fff;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0 50%;
+  }
+}
+section.portfolio:after,
+section.portfolio:before {
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  z-index: 0;
+}
+section.portfolio:before {
+  animation: float1 9s ease-in-out infinite alternate;
+  background: radial-gradient(circle, #d3c4f3, transparent 70%);
+  height: 300px;
+  left: -150px;
+  top: -120px;
+  width: 300px;
+}
+section.portfolio:after {
+  animation: float2 11s ease-in-out infinite alternate;
+  background: radial-gradient(circle, #3b0a6f, transparent 70%);
+  bottom: -120px;
+  height: 350px;
+  right: -130px;
+  width: 350px;
+}
+@keyframes float1 {
+  0% {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(40px, 30px);
+  }
+}
+@keyframes float2 {
+  0% {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-40px, -30px);
+  }
+}
+.portfolio__header h2 {
+  background: linear-gradient(135deg, #3b0a6f, #d3c4f3);
+  -webkit-background-clip: text;
+  font-size: 2.8rem;
+  font-weight: 800;
+  -webkit-text-fill-color: transparent;
+}
+.portfolio__header h2 span {
+  background: linear-gradient(135deg, #000, #3b0a6f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.filter-tabs {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin: 25px auto 40px;
+  padding-bottom: 8px;
+  position: relative;
+  width: max-content;
+}
+.filter-tabs a {
+  color: #444;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 6px 4px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.filter-tabs a.active,
+.filter-tabs a:hover {
+  color: #3b0a6f;
+}
+.filter-tabs a.active:after {
+  background-color: #3b0a6f;
+  border-radius: 2px;
+  bottom: -6px;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.more-btn button {
+  background: linear-gradient(135deg, #3b0a6f, #d3c4f3);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 14px 40px;
+  transition: 0.3s ease;
+}
+
+.more-btn button:hover {
+  box-shadow: 0 5px 20px rgba(59, 10, 111, 0.35);
+  transform: scale(1.07);
+}
+
+:root {
+  --bg-light-start: #f3e8ff;
+  --bg-light-end: #f3e8ff;
+}
+.portfolio__item.is-portrait img {
+  margin: 0;
+}
+.portfolio__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.portfolio__item {
+  background: transparent !important;
+  border-radius: 16px;
+  box-shadow: none;
+  overflow: hidden;
+  width: min(100%, 900px);
+}
+.portfolio__item img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.portfolio__item.is-portrait img {
+  height: 520px;
+  object-fit: cover;
+  width: auto;
+}
+@media (max-width: 768px) {
+  .portfolio__item.is-portrait img {
+    height: 380px;
+  }
+}
+.portfolio__item.left {
+  margin-left: 0;
+  margin-right: auto;
+}
+.portfolio__item.right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .portfolio__item.left {
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right;
+}
+
+html[dir="rtl"] .portfolio__item.right {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+html[dir="rtl"] .portfolio__item.left img {
+  margin-right: 0;
+  margin-left: auto;
+  display: block;
+}
+
+html[dir="rtl"] .portfolio__item.right img {
+  margin-left: 0;
+  margin-right: auto;
+  display: block;
+}
+/* اعكس معنى left/right لعناصر social فقط */
+.portfolio__item.social.left  { margin-left: auto; margin-right: 0; }  /* تصير يمين */
+.portfolio__item.social.right { margin-left: 0;    margin-right: auto; }/* تصير يسار */
+
+/* خَلِّ الصور تلتصق بحافة الكارد (بدل ما تتمركز) */
+.portfolio__item.social.left  img { margin-left: auto; margin-right: 0; display:block; }
+.portfolio__item.social.right img { margin-right: auto; margin-left: 0; display:block; }
+/* 🟣 فيديوهات خطط تسويقية */
+.portfolio__item.ads {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* يمين ويسار */
+.portfolio__item.ads.right {
+  justify-content: flex-start; /* يمين */
+}
+.portfolio__item.ads.left {
+  justify-content: flex-end;   /* يسار */
+}
+
+/* الفيديو */
+.portfolio__item.ads video {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+  background: #000;
+  margin: 0;
+}
+
+/* ✨ الحل هنا: نجبر الفيديو لما يكون يسار يلتصق بالكامل */
+.portfolio__item.ads.left video {
+  margin-left: auto;   /* يلتصق يسار */
+  margin-right: 0;
+}
+
+.portfolio__item.ads.right video {
+  margin-right: auto;  /* يلتصق يمين */
+  margin-left: 0;
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .portfolio__item.ads video {
+    max-width: 220px;
+  }
+}
+
+/* 🌙 الوضع الداكن لمعرض الأعمال */
+[data-theme="dark-navy"] section.portfolio {
+  background: linear-gradient(180deg, #0b1221, #10192f 50%, #141f38);
+  position: relative;
+  padding: 100px 5%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+[data-theme="dark-navy"] section.portfolio:before {
+  width: 320px;
+  height: 320px;
+  top: -140px;
+  left: -160px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle, #d3c4f3 0%, transparent 70%);
+  animation: float1 9s ease-in-out infinite alternate;
+  z-index: 0;
+}
+[data-theme="dark-navy"] section.portfolio:after {
+  width: 360px;
+  height: 360px;
+  bottom: -140px;
+  right: -160px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle, #3b0a6f 0%, transparent 70%);
+  animation: float2 11s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* ✨ العناوين */
+[data-theme="dark-navy"] .portfolio__header h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #d3c4f3, #3b0a6f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-theme="dark-navy"] .portfolio__header h2 span {
+  background: linear-gradient(135deg, #fff, #7e449e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🟣 تبويبات الفلترة */
+[data-theme="dark-navy"] .filter-tabs a {
+  color: #e5e7eb;
+}
+[data-theme="dark-navy"] .filter-tabs a.active,
+[data-theme="dark-navy"] .filter-tabs a:hover {
+  color: #d3c4f3;
+}
+[data-theme="dark-navy"] .filter-tabs a.active:after {
+  background-color: #d3c4f3;
+}
+
+/* 🟣 زر عرض المزيد */
+[data-theme="dark-navy"] .more-btn button {
+  background: linear-gradient(135deg, #3b0a6f, #d3c4f3);
+  color: #fff;
+}
+[data-theme="dark-navy"] .more-btn button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 5px 20px rgba(59, 10, 111, 0.35);
+}
+
+
+
+
+
+
+
+/* 🟣 اللوجو الافتراضي (وضع فاتح) */
+.logo-switch {
+  content: url("acc/logo.png");
+}
+
+/* 🟣 عند تفعيل الوضع الداكن يتغير لـ logo2 */
+[data-theme="dark-navy"] .logo-switch {
+  content: url("acc/logo2.png");
+}
+
+
+
+
+
+
+
+.media-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.media-wrapper img,
+.media-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.portfolio__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.media-wrapper:hover .portfolio__overlay {
+  opacity: 1;
+}
+
+.media-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+  pointer-events: auto; /* يسمح بالتفاعل مع الفيديو */
+}
+
+.media-wrapper video {
+
+  object-fit: cover;
+  pointer-events: auto;
+}
+
+/* خصيصًا للفيديوهات: اجعلها تظهر فورًا بدون تأخير */
+.portfolio__item.ads {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+
+
+
+.portfolio__item {
+  opacity: 1; /* تبدأ ظاهرة */
+  transform: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.portfolio__item.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.portfolio__item.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+.chip {
+  background: linear-gradient(135deg, #7e449e, #d3c4f3);
+  color: #000000 !important;
+  padding: 8px 18px;          /* تباعد مريح */
+  border-radius: 9999px;      /* ✨ يجعلها دائرية/بيضاوية مثالية */
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(126, 68, 158, 0.2);
+}
+
+.chip:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(126, 68, 158, 0.35);
+}
+
+
+/* 🌞 الوضع العادي */
+.chip {
+  background: linear-gradient(135deg, #7e449e, #d3c4f3);
+  color: #000000 !important;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(126, 68, 158, 0.2);
+}
+
+.chip:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(126, 68, 158, 0.35);
+}
+
+/* 🌙 الوضع الداكن */
+[data-theme="dark-navy"] .chip {
+  background: #fff !important;   /* الدائرة بيضاء */
+  color: #000 !important;        /* النص أسود */
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark-navy"] .chip:hover {
+  background: #f9f9f9 !important; /* أفتح شوي عند الهوفر */
+  box-shadow: 0 6px 14px rgba(255, 255, 255, 0.35);
+}
+
+
+/* 🟣 روابط الهيدر */
+header nav ul li a {
+  color: var(--ink-dim);          /* الافتراضي */
+  font-weight: 600;              /* يزيد وضوح النص */
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: var(--accent);          /* عند التمرير أوضح */
+}
+
+/* 🟣 زر الوضع الداكن */
+#darkModeBtn {
+  border: 1px solid var(--accent) !important;
+  background: var(--surface) !important;
+  color: var(--accent) !important;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+#darkModeBtn:hover {
+  background: var(--accent) !important;
+  color: #fff !important;
+  transform: scale(1.08);
+}
+
+.portfolio__item {
+  position: relative; /* ✅ يربط الـ overlay بالصورة */
+  overflow: hidden;   /* يخلي الظل ما يطلع برا الكرت */
+}
+
+.overlay-293x520 {
+  width: 293px;
+  height: 520px;
+  position: absolute;
+  top: 0;
+  right: 64px;   /* خليه يلتصق بالكرت بدل fixed رقم */
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  padding: 12px;
+  border-radius: 0;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.portfolio__item:hover .overlay-293x520 {
+  opacity: 1;
+}
+
+.overlay-742x278 {
+  width: 742px;
+  height: 380px;   /* ✨ زودت الطول */
+  position: absolute;
+  top: 0;
+  right: 80px; /* تلتصق بالكرت */
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  border-radius: 0;   /* الحواف مربعة */
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.portfolio__item:hover .overlay-742x278 {
+  opacity: 1;
+}
+
+.media-wrapper {
+  position: relative; /* ⬅ يخلي الظل مربوط بالصورة */
+  display: inline-block;
+}
+
+.overlay-293x520-influencer {
+  width: 293px;
+  height: 520px;
+  position: absolute;
+  top: 0;
+  left: 0;  /* ⬅ الآن يلتصق يسار الصورة نفسها */
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.media-wrapper:hover .overlay-293x520-influencer {
+  opacity: 1;
+}
+
+
+.portfolio__item {
+  position: relative;
+}
+
+.portfolio__item .media-wrapper {
+  position: relative;
+  display: inline-block; /* يحدد حدود الصورة نفسها */
+}
+
+.overlay-293x520-influencer {
+  width: 293px;
+  height: 520px;
+  position: absolute;
+  top: 0;
+  left: 0; /* يلصق باليسار */
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity .3s ease;
+  z-index: 2;
+}
+
+.media-wrapper:hover .overlay-293x520-influencer {
+  opacity: 1;
+}
+
+
+.overlay-870x463 {
+  width: 899px;   /* عرض الظل */
+  height: 480px;  /* طول الظل */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px; /* ممكن تخليها 0 لو تبيه مربع */
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.portfolio__item:hover .overlay-870x463 {
+  opacity: 1;
+}
+
+.btn-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #3b0a6f, #d3c4f3);
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 14px 40px;
+  text-decoration: none;   /* يشيل الخط تحت الرابط */
+  transition: 0.3s ease;
+}
+
+.btn-link:hover {
+  box-shadow: 0 5px 20px rgba(59, 10, 111, 0.35);
+  transform: scale(1.07);
+}
+
+
+/* ✨ الوضع الداكن: غير الصورة */
+[data-theme="dark-navy"] .img-switch {
+  content: url("acc/2.png");
+}
+
+.portfolio-number {
+  color: #7b7676 !important;   /* رمادي فاتح */
+}
+
+
+/* الشبكة */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* الصور والفيديو */
+.portfolio-grid img,
+.portfolio-grid video {
+  width: 100%;
+  height: 250px;       /* نفس الارتفاع للجميع */
+  object-fit: cover;   /* يقص الزايد ويحافظ على التناسب */
+  border-radius: 8px;
+  display: block;
+}
+
+
+
+.btn-link {
+  display: inline-block;
+  background: rgb(132, 37, 180); /* مربع شفاف */
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;   /* ⬅ صغر حجم الخط */
+  font-weight: 600;
+  padding: 8px 18px;    /* ⬅ صغر البادينغ */
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-link:hover {
+  background: rgba(132, 37, 180, 0.39); /* يزيد وضوح الشفافية عند الهوفر */
+  transform: scale(1.05);
+}
+
+
+
+
+/* قاعدة عامة لكل الظلال */
+.overlay-742x278,
+.overlay-293x520,
+.overlay-293x520-influencer,
+.overlay-293x520-fam,
+.overlay-870x216,
+.overlay-870x463 {
+  position: absolute;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;   /* يخلي النص فوق والزر تحته */
+  align-items: center;      /* يوسّط أفقي */
+  justify-content: center;  /* يوسّط عمودي */
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+
+.overlay-293x520-fam { width: 293px; height: 520px; right: 0px; }
+.overlay-870x216 { width: 900px; height: 216px; left: 0; }
+.overlay-870x463 { width: 900px; height: 480px; left: 0; }
+
+/* النص */
+.portfolio__overlay p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* الزر */
+.portfolio__overlay .btn-link {
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.portfolio__overlay .btn-link:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.05);
+}
+
+
+
+
+
+/* خاص بالـ mode1 داخل تبويبة content */
+.portfolio__item.content .overlay-293x520 {
+  left: 0px !important;   /* ✨ تثبيت بالقوة */
+}
+
+/* خاص بالـ mode4 داخل تبويبة influencers */
+.portfolio__item.influencers .overlay-293x520-influencer {
+  right: 0px !important;  /* ✨ تثبيت بالقوة */
+}
+
+/* 🌙 النص في الهيدر بالوضع الداكن */
+[data-theme="dark-navy"] header .text-xl {
+  color: #fff !important;
+}
+
+/* إخفاء العناصر اللي عليها hide-in-all عند اختيار تبويب "الكل" */
+.portfolio-filter li.active[data-filter="*"] ~ .portfolio-grid .hide-in-all {
+  display: none !important;
+}
+
+/* افتراضياً كل العناصر تظهر */
+.portfolio-grid .item {
+  display: block;
+}
+
+/* لما يكون زر "الكل" مفعّل */
+.portfolio-filter li.active[data-filter="*"] ~ .portfolio-grid .hide-in-all {
+  display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🎯 توزيع الأيقونات للديسكتوب */
+.hero-floaters .floater:nth-child(1) { top: 12%; right: 10%; }
+.hero-floaters .floater:nth-child(2) { top: 26%; left: 12%; }
+.hero-floaters .floater:nth-child(3) { bottom: 18%; right: 6%; }
+.hero-floaters .floater:nth-child(4) { top: 22%; right: 46%; }
+.hero-floaters .floater:nth-child(5) { bottom: 20%; left: 16%; }
+.hero-floaters .floater:nth-child(6) { top: 34%; right: 4%; }
+
+
+
+@media (max-width: 768px) {
+  /* ✨ الهيرو */
+  #hero {
+    margin-top: 60px;
+  }
+  #hero .grid {
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+  #hero h1 {
+    font-size: 21px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  #hero p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+    text-align: center;
+    color: #000 !important;
+  }
+  #hero .reveal-up.d3 {
+    flex-direction: column;
+    gap: 12px;
+  }
+  #hero a {
+    width: auto;
+    min-width: 180px;
+    max-width: 220px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  /* أيقونة الوضع الليلي */
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--surface);
+    cursor: pointer;
+  }
+  .theme-toggle img {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* 🎯 توزيع الأيقونات */
+  .hero-floaters .floater:nth-child(1) { top: 30%; left: 20%; }
+  .hero-floaters .floater:nth-child(2) { top: 40%; right: 90%; }
+  .hero-floaters .floater:nth-child(3) { top: 50% !important; left: 60% !important; }
+  .hero-floaters .floater:nth-child(4) { top: 10%; right: 70%; }
+  .hero-floaters .floater:nth-child(5) { top: 80%; left: 80%; }
+  .hero-floaters .floater:nth-child(6) { top: 85%; right: 80%; }
+
+  /* التبويبات */
+  .filter-tabs {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 0 10px;
+  }
+  .filter-tabs a {
+    flex: 1 1 calc(50% - 12px);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink-dim);
+    text-decoration: none !important;
+    border: none !important;
+    padding: 6px 0;
+    background: none;
+    transition: all 0.3s ease;
+  }
+  .filter-tabs a.active {
+    color: var(--accent);
+    border-bottom: 3px solid var(--accent);
+  }
+
+  /* الشبكة */
+  .portfolio__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .portfolio__item {
+    max-width: 90%;
+  }
+  .portfolio__item:nth-child(odd) { align-self: flex-start; }
+  .portfolio__item:nth-child(even) { align-self: flex-end; }
+  .portfolio__item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* سكشن الجرافيك */
+  .portfolio__item.content {
+    width: 85%;
+  }
+  .portfolio__item.content:nth-child(1) img {
+    margin-right: auto;
+  }
+  .portfolio__item.content:nth-child(2) img {
+    margin-left: auto;
+  }
+
+  /* النصوص */
+  .portfolio__overlay p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .portfolio__overlay .btn-link {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  /* كل الظلال */
+  .overlay-742x278,
+  .overlay-293x520,
+  .overlay-293x520-influencer,
+  .overlay-293x520-fam,
+  .overlay-870x216,
+  .overlay-870x463 {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 8px;
+  }
+
+  /* النص في أول تبويبة تطوير */
+  .portfolio__item.web .overlay-870x216 p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .portfolio__item.web .overlay-870x216 .btn-link {
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+
+  /* 🟣 الرسائل الثلاث */
+  section.bg-\[var\(--bg-2\)\] {
+    padding: 30px 14px;
+  }
+  section.bg-\[var\(--bg-2\)\] .grid > div {
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 12px;
+  }
+
+  /* 🟣 الخدمات */
+  #services {
+    padding: 40px 16px;
+  }
+  #services h3 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  #services .portfolio-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--accent);
+  }
+  #services h4 {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  #services p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+  }
+  #services .grid {
+    gap: 14px;
+  }
+
+  /* 🟣 الأدوات المساعدة */
+  #stack {
+    padding: 40px 16px;
+  }
+  #stack h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  #stack .rounded-2xl {
+    font-size: 13px;
+    padding: 14px;
+  }
+
+  /* 🟣 مهاراتي */
+  #services-grid {
+    padding: 40px 16px;
+  }
+  #services-grid h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  #services-grid h4 {
+    font-size: 16px;
+  }
+  #services-grid p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* 🟣 الشريط */
+  .outer .content {
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 5px 10px;
+  }
+
+  /* 🟣 التواصل */
+  #contact {
+    padding: 40px 20px;
+  }
+  #contact h2 {
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  #contact a {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  /* 🟣 الفوتر */
+  footer {
+    text-align: right;
+    padding: 18px 14px;
+  }
+  footer .text-2xl {
+    font-size: 17px;
+  }
+  footer p,
+  footer ul li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* 🟣 صورة الخدمات */
+  #services .aspect-\[4\/5\] {
+    max-width: 200px;
+    margin: 0 auto;
+    transform: rotate(6deg);
+  }
+  #services .aspect-\[4\/5\] img {
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .portfolio__overlay p {
+    font-size: 12.5px;   /* أصغر شوي */
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 8px;  /* مسافة تحت النص */
+  }
+
+   .portfolio__overlay .btn-link {
+    font-size: 11px;     /* خط أصغر */
+    padding: 6px 12px;   /* حشوات أنحف */
+    border-radius: 6px;  /* زوايا أنعم */
+    display: inline-block;
+    text-align: center;
+  }
+  .portfolio__item.web .overlay-870x216 p {
+    font-size: 12.5px;
+    margin-bottom: 0;
+  }
+  .portfolio__item.web .overlay-870x216 .btn-link {
+    font-size: 11px;
+    padding: 1px 1px;
+  }
+/* النصوص داخل الظل */
+.portfolio__item.content .overlay-293x520 p,
+.portfolio__item.content .overlay-742x278 p {
+  font-size: 12.5px;
+  margin-bottom: 6px;   /* ✨ خلي المسافة تحت النص صغيرة */
+  line-height: 1.5;     /* يوازن الأسطر */
+}
+
+/* الأزرار داخل الظل */
+.portfolio__item.content .overlay-293x520 .btn-link,
+.portfolio__item.content .overlay-742x278 .btn-link {
+  font-size: 11px;
+  padding: 6px 11px;
+  margin-top: 0;        /* ✨ يشيل أي مسافة إضافية فوق الزر */
+}
+
+   .portfolio__item.influencers .overlay-293x520-influencer p,
+  .portfolio__item.influencers .overlay-293x520-fam p {
+    font-size: 12.5px;
+  }
+  .portfolio__item.influencers .overlay-293x520-influencer .btn-link,
+  .portfolio__item.influencers .overlay-293x520-fam .btn-link {
+    font-size: 11px;
+    padding: 6px 11px;
+  }
+
+   /* الافتراضي (الظل ثابت وسط العنصر بعرض 214px) */
+  .portfolio__item.content .overlay-293x520 {
+    position: absolute !important;
+    width: 214px !important;
+    height: 380px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    margin: auto 0 !important;   /* يتوسط عمودي */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: rgba(0,0,0,0.7) !important;
+    border-radius: 8px !important;
+    padding: 5px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* 🟣 نسخة يمين */
+  .portfolio__item.content.right .overlay-293x520 {
+    right: 0 !important;   /* مسافة من اليمين */
+    left: 0px !important;
+  }
+
+  /* 🟣 نسخة يسار */
+  .portfolio__item.content.left .overlay-293x520 {
+    left: 0 !important;    /* مسافة من اليسار */
+    right: 33px !important;
+  }
+ /* 🟣 الرسائل الثلاث */
+  section.bg-\[var\(--bg-2\)\] {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  /* 🟣 الخدمات */
+  #services {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  /* 🟣 معرض الأعمال */
+  .portfolio {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  /* 🟣 الأدوات المساعدة */
+  #stack {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  /* 🟣 مهاراتي */
+  #services-grid {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+
+  /* 🟣 قسم التواصل (البروفايل) */
+  #contact {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  /* 🟣 الفوتر */
+  footer {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+    #services > .mx-auto {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+   footer .mx-auto {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  footer .border-t {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+    #stack {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  #stack .mt-8 {
+    margin-top: 15px !important;
+  }
+
+  #stack h3 {
+    font-size: 22px !important;
+  }
+    #services-grid {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  #services-grid h3 {
+    font-size: 22px !important; /* العنوان أصغر */
+  }
+
+  #services-grid .mt-8 {
+    margin-top: 15px !important; /* يقلل الفراغ قبل البطاقات */
+  }
+  
+  /* 🟣 الهيرو */
+  #hero {
+    margin-top: 60px;
+  }
+  #hero .grid {
+    padding: 40px 16px;
+  }
+  #hero h1 {
+    font-size: 21px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    text-align: center;
+        padding-top: 20px;
+}
+  
+  #hero p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+        margin-top: 20px;
+  }
+
+  /* 🟣 الرسائل الثلاث */
+  section.bg-\[var\(--bg-2\)\] {
+    padding: 15px !important;
+  }
+
+  /* 🟣 الخدمات */
+  #services {
+    padding: 20px 16px !important;
+  }
+  #services h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  #services p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* 🟣 معرض الأعمال */
+  section.portfolio {
+    padding: 20px 5% !important;
+  }
+  .portfolio__grid {
+    gap: 25px;
+  }
+
+  /* 🟣 الأدوات المساعدة */
+  #stack {
+    padding: 20px 16px !important;
+  }
+  #stack h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* 🟣 مهاراتي */
+  #services-grid {
+    padding: 20px 16px !important;
+  }
+  #services-grid h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  #services-grid .mt-8 {
+    margin-top: 12px !important;
+  }
+
+  /* 🟣 قسم التواصل */
+  #contact {
+    padding: 20px 16px !important;
+  }
+  #contact h2 {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  /* 🟣 الفوتر */
+  footer {
+    padding: 15px !important;
+    text-align: center;
+  }
+  footer .text-2xl {
+    font-size: 16px;
+  }
+  footer p {
+    font-size: 13px;
+  }
+    #services-grid > .mx-auto {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  #services-grid h3 {
+    font-size: 22px !important;
+    margin-bottom: 10px !important;
+  }
+  #services-grid .mt-8 {
+    margin-top: 12px !important;
+  }
+    #stack > .mx-auto {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  #stack h3 {
+    font-size: 22px !important;
+    margin-bottom: 10px !important;
+  }
+  #stack .mt-8 {
+    margin-top: 12px !important;
+  }
+   #services {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  #services .grid {
+    gap: 12px !important;   /* بدل gap-10 */
+  }
+
+  #services h3 {
+    font-size: 22px !important;  /* أصغر شوي */
+    line-height: 1.4 !important; /* تقليل التباعد بين السطور */
+    margin-bottom: 8px !important;
+  }
+
+  #services h4 {
+    font-size: 16px !important;
+    margin-bottom: 4px !important;
+    line-height: 1.4 !important;
+  }
+
+  #services p {
+    font-size: 13px !important;
+    line-height: 1.5 !important; /* أقصر بين السطور */
+    margin-bottom: 0px !important;
+  }
+
+  #services .relative.mt-10 {
+    margin-top: 6px !important;  /* قصر المسافة قبل الصورة */
+  }
+ 
+  .portfolio__header p {
+    font-size: 18px !important;   /* أصغر نص الوصف */
+    line-height: 1.5 !important;
+    margin: 0 auto 12px auto !important; /* يوسّطه تحت العنوان */
+    max-width: 90% !important;    /* يخليه مناسب لشاشة الجوال */
+  }
+.portfolio__header h2 {
+  font-size: 25px !important;   /* مناسب للجوال */
+  line-height: 1.4 !important;
+
+  margin-bottom: 30px !important; /* يخلي مسافة صغيرة فقط */
+  font-weight: 800 !important;
+  text-align: center !important;
+}
+
+.portfolio__header p {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  margin-top: 8px !important;   /* ✨ ينزل النص تحت */
+  margin-bottom: 12px !important;
+  max-width: 90% !important;
+  text-align: center !important;
+}
+  footer {
+    text-align: right !important;   /* ✨ يخلي النص لليمين */
+  }
+  footer .mx-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+.outer .content {
+    font-size: 18px !important;
+  }
+  footer.footer-elegant {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+
+  footer.footer-elegant .border-t {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  footer.footer-elegant p,
+  footer.footer-elegant ul li {
+    font-size: 14px !important;   /* يكبر النص شوي */
+    line-height: 1.6 !important;
+  }
+
+  footer.footer-elegant .text-2xl {
+    font-size: 20px !important;
+  }
+    /* 🎯 قسم التواصل (الجوال فقط) */
+  #contact .max-w-3xl {
+    padding-top: 50px !important;   /* أصغر من 96px */
+    padding-bottom: 50px !important;
+  }
+
+  #contact h2 {
+    font-size: 18px !important;     /* خط أصغر للجوال */
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+  }
+
+  #contact a {
+    padding: 6px 12px !important;   /* الأزرار أصغر */
+    font-size: 12px !important;
+  }
+  #contact {
+  background: var(--bg-2);         /* أغمق شوي من الخلفية الأساسية */
+  padding: 3rem 1.5rem;
+  text-align: right;               /* محاذاة يمين */
+}
+
+#contact h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+#contact p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+#contact .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+ .outer, .marquee {
+    animation-duration: 15s !important; /* أسرع من نسخة الديسكتوب */
+    will-change: transform;            /* تسريع رسومي */
+  }
+
+  /* تقليل حجم النصوص عشان يمشي أسرع */
+  .marquee span {
+    font-size: 15px !important;
+    margin: 0 20px !important; /* مسافة معقولة بين الكلمات */
+  }
+  .outer-blue .loop {
+    animation-duration: 5s !important; /* متوسط */
+  }
+  .outer-green .loop {
+    animation-duration: 6s !important;  /* ✨ أسرع بكثير */
+  }
+
+
+/* الحركة */
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+
+  
+
+}
+
+}
+
+@media (min-width: 1024px) {
+  #hero .text-center {
+    justify-content: flex-start; /* يبدأ من فوق */
+    padding-top: 80px;          /* ✨ ينزل النص تحت */
+    min-height: auto;            /* يحرره من التوسيط */
+  }
+.outer {
+  height: 140px;              /* تثبيت ارتفاع الشريط */
+  display: flex;
+  align-items: center;       /* يوسّط النص عموديًا */
+  overflow: hidden;
+}
+
+.loop .content {
+  font-size: 50px;           /* النص داخل */
+  line-height: 1;
+  white-space: nowrap;
+}
+  /* تقليل حجم النصوص عشان يمشي أسرع */
+  .marquee span {
+    font-size: 13px !important;
+    margin: 0 20px !important; /* مسافة معقولة بين الكلمات */
+  }
+  .outer-blue .loop {
+    animation-duration: 9s !important; /* متوسط */
+  }
+  .outer-green .loop {
+    animation-duration: 12s !important;  /* ✨ أسرع بكثير */
+  }
+}
