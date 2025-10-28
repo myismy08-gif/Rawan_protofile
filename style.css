@@ -2266,3 +2266,168 @@ header nav ul li a:hover {
 }
 
 }
+/* 🎨 Rawan Badr — Digital Skills Section */
+.digital-skills-section {
+  padding: 7rem 1.5rem;
+  background: linear-gradient(to bottom, #FAF7FF, #FBF8FF, white);
+  text-align: center;
+}
+
+/* العنوان */
+.skills-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #4B3F63;
+  margin-bottom: 1rem;
+}
+
+.skills-header p {
+  color: #5C5573;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+/* الشبكة */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* البطاقة */
+.skill-card {
+  background: linear-gradient(to bottom right, #ffffff, #F9F5FF);
+  border: 1px solid #E6DAFF;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: right;
+  transition: all 0.5s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(126, 60, 200, 0.15);
+  border-color: #BFA4FF;
+}
+
+/* الأيقونة */
+.skill-card .icon {
+  background: #EDE4FF;
+  display: inline-flex;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.skill-card .icon i {
+  color: #7E3CC8;
+  font-size: 1.875rem;
+}
+
+/* النصوص */
+.skill-card h3 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #4B3F63;
+  margin-bottom: 0.75rem;
+}
+
+.skill-card p {
+  font-size: 0.9rem;
+  color: #666478;
+  line-height: 1.7;
+}
+/* 🌙 الوضع الليلي لسكشن المهارات الرقمية (متوافق مع الزر) */
+body[data-theme="dark-navy"] .digital-skills-section {
+  background: rgb(20, 31, 56);
+}
+
+body[data-theme="dark-navy"] .skills-header h2 {
+  color: #E9DDFF;
+}
+
+body[data-theme="dark-navy"] .skills-header p {
+  color: #BFB2E3;
+}
+
+/* البطاقات */
+body[data-theme="dark-navy"] .skill-card {
+  background: linear-gradient(to bottom right, #271F44, #34265A);
+  border: 1px solid #5F4DAA;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: all 0.4s ease;
+}
+
+body[data-theme="dark-navy"] .skill-card:hover {
+  transform: translateY(-8px);
+  border-color: #A992FF;
+  box-shadow: 0 8px 18px rgba(169,146,255,0.25);
+}
+
+/* الأيقونة */
+body[data-theme="dark-navy"] .skill-card .icon {
+  background: #3A2D63;
+}
+
+body[data-theme="dark-navy"] .skill-card .icon i {
+  color: #CBB7FF;
+}
+
+/* النصوص */
+body[data-theme="dark-navy"] .skill-card h3 {
+  color: #E8DCFF;
+}
+
+body[data-theme="dark-navy"] .skill-card p {
+  color: #CDC1EE;
+}
+/* 🟣 الوضع الداكن لسكشن المهارات الرقمية بنفس خلفية الموقع */
+body[data-theme="dark-navy"] .digital-skills-section {
+  background-color: b(15, 23, 42); /* نفس الكحلي العميق المستخدم في الموقع */
+  transition: background 0.4s ease;
+}
+
+/* العنوان والنص */
+body[data-theme="dark-navy"] .skills-header h2 {
+  color: #EAEAF5;
+}
+
+body[data-theme="dark-navy"] .skills-header p {
+  color: #B8BCD6;
+}
+
+/* البطاقات */
+body[data-theme="dark-navy"] .skill-card {
+  background-color: #12172A;
+  border: 1px solid #1D2238;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+body[data-theme="dark-navy"] .skill-card:hover {
+  background-color: #151B2F;
+  border-color: #565B9E;
+  box-shadow: 0 6px 14px rgba(86,91,158,0.25);
+}
+
+/* الأيقونات */
+body[data-theme="dark-navy"] .skill-card .icon {
+  background: #1B2035;
+}
+
+body[data-theme="dark-navy"] .skill-card .icon i {
+  color: #A6A9FF;
+}
+
+/* النصوص داخل البطاقات */
+body[data-theme="dark-navy"] .skill-card h3 {
+  color: #E3E5F2;
+}
+
+body[data-theme="dark-navy"] .skill-card p {
+  color: #B4B8C9;
+}
