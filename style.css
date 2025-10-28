@@ -2304,9 +2304,16 @@ header nav ul li a:hover {
   border: 1px solid #E6DAFF;
   border-radius: 1.5rem;
   padding: 2.5rem;
-  text-align: right;
+  text-align: center; /* ✅ توسيط النصوص */
   transition: all 0.5s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+
+  /* ✅ لتوسيط الأيقونة والنصوص عموديًا */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .skill-card:hover {
@@ -2321,7 +2328,8 @@ header nav ul li a:hover {
   display: inline-flex;
   padding: 1rem;
   border-radius: 1rem;
-  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .skill-card .icon i {
@@ -2341,8 +2349,10 @@ header nav ul li a:hover {
   font-size: 0.9rem;
   color: #666478;
   line-height: 1.7;
+  max-width: 85%;
 }
-/* 🌙 الوضع الليلي لسكشن المهارات الرقمية (متوافق مع الزر) */
+
+/* 🌙 الوضع الليلي */
 body[data-theme="dark-navy"] .digital-skills-section {
   background: rgb(20, 31, 56);
 }
@@ -2361,6 +2371,13 @@ body[data-theme="dark-navy"] .skill-card {
   border: 1px solid #5F4DAA;
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
   transition: all 0.4s ease;
+
+  /* ✅ نفس التوسيط في الوضع الغامق */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 body[data-theme="dark-navy"] .skill-card:hover {
@@ -2386,51 +2403,39 @@ body[data-theme="dark-navy"] .skill-card h3 {
 body[data-theme="dark-navy"] .skill-card p {
   color: #CDC1EE;
 }
-/* 🟣 الوضع الداكن لسكشن المهارات الرقمية بنفس خلفية الموقع */
-body[data-theme="dark-navy"] .digital-skills-section {
-  background-color: b(15, 23, 42); /* نفس الكحلي العميق المستخدم في الموقع */
-  transition: background 0.4s ease;
+
+
+
+
+
+/* 📱 للجوال فقط */
+@media (max-width: 768px) {
+  
+  .rb-section {
+    padding: 2rem 1rem; /* ✅ تقليل المسافة العلوية والسفلية */
+  }
+
+  .rb-section .grid {
+    gap: 0.8rem; /* ✅ تقليل المسافات بين البطاقات */
+    grid-template-columns: 1fr; /* كل بطاقة في صف مستقل */
+  }
+
+  .rb-section .rounded-2xl {
+    padding: 1rem; /* ✅ تصغير الحشوة داخل البطاقة */
+    margin-bottom: 0.8rem; /* ✅ تقليل الفراغ بين البطاقات */
+    border-radius: 0.8rem;
+  }
+
+  .rb-section .font-extrabold {
+    font-size: 1rem; /* ✅ تصغير العنوان قليلاً */
+  }
+
+  .rb-section .text-sm:not(.font-extrabold) {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
 }
 
-/* العنوان والنص */
-body[data-theme="dark-navy"] .skills-header h2 {
-  color: #EAEAF5;
-}
-
-body[data-theme="dark-navy"] .skills-header p {
-  color: #B8BCD6;
-}
-
-/* البطاقات */
-body[data-theme="dark-navy"] .skill-card {
-  background-color: #12172A;
-  border: 1px solid #1D2238;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-}
-
-body[data-theme="dark-navy"] .skill-card:hover {
-  background-color: #151B2F;
-  border-color: #565B9E;
-  box-shadow: 0 6px 14px rgba(86,91,158,0.25);
-}
-
-/* الأيقونات */
-body[data-theme="dark-navy"] .skill-card .icon {
-  background: #1B2035;
-}
-
-body[data-theme="dark-navy"] .skill-card .icon i {
-  color: #A6A9FF;
-}
-
-/* النصوص داخل البطاقات */
-body[data-theme="dark-navy"] .skill-card h3 {
-  color: #E3E5F2;
-}
-
-body[data-theme="dark-navy"] .skill-card p {
-  color: #B4B8C9;
-}
 
 
 /* 🟣 تعريف متغيرات خاصة ومميزة بـ RawanBadr */
@@ -2453,6 +2458,7 @@ body[data-theme="dark-navy"] .skill-card p {
   --rb-hover-border-light: #CBB7FF;
   --rb-hover-border-dark: #A9ABFF;
 }
+
 /* 🌞 الوضع الفاتح */
 .rb-section {
   background: #FFFFFF;
@@ -2465,6 +2471,7 @@ body[data-theme="dark-navy"] .skill-card p {
   border-radius: 1rem;
   padding: 20px;
   transition: all 0.3s ease;
+  text-align: center; /* ✅ توسيط النصوص */
 }
 
 /* عند المرور */
@@ -2493,8 +2500,9 @@ body[data-theme="dark-navy"] .rb-section {
 body[data-theme="dark-navy"] .rb-section .rounded-2xl {
   background: #141f38;
   border: 1px solid rgba(126, 60, 200, 0.2); /* حدود موف خفيفة جدًا */
-  box-shadow: 0 2px 8px #141f38;;
+  box-shadow: 0 2px 8px #141f38;
   transition: all 0.3s ease;
+  text-align: center; /* ✅ توسيط النصوص أيضًا في الغامق */
 }
 
 /* عند المرور في الغامق */
@@ -2512,4 +2520,56 @@ body[data-theme="dark-navy"] .rb-section .font-extrabold {
 /* الفقرات في الغامق */
 body[data-theme="dark-navy"] .rb-section .text-sm:not(.font-extrabold) {
   color: #C9B8FF; /* ✨ موف فاتح جداً وواضح */
+}
+
+
+.rb-section {
+  font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 📱 ضبط دقيق لسكشن rb-section في الجوال فقط */
+@media (max-width: 768px) {
+  .rb-section {
+    padding: 1rem 0.5rem; /* 🔹 يقلل المسافة من الأعلى والأسفل */
+  }
+
+  .rb-section .grid {
+    gap: 0.5rem; /* 🔹 تقليل المسافة بين البطاقات */
+    grid-template-columns: 1fr; /* 🔹 صف واحد */
+  }
+
+  .rb-section .rounded-2xl {
+    padding: 0.7rem 0.8rem; /* 🔹 يقلل حجم البطاقة نفسها */
+    border-radius: 0.6rem; /* 🔹 زوايا أخف */
+    margin-bottom: 0.5rem; /* 🔹 مسافة بسيطة بين البطاقات */
+    box-shadow: none; /* 🔹 بدون ظل قوي */
+    transform: scale(0.96); /* 🔹 يصغرها شوي بدون ما يخرب التوازن */
+  }
+
+  .rb-section .font-extrabold {
+    font-size: 0.85rem; /* 🔹 حجم العناوين صغير وواضح */
+    line-height: 1.3;
+  }
+
+  .rb-section .text-sm:not(.font-extrabold) {
+    font-size: 0.7rem; /* 🔹 تصغير النصوص الداخلية */
+    line-height: 1.4; /* 🔹 تباعد مريح للقراءة */
+  }
+    .rb-section {
+    font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 0.95rem; /* 🔹 مقياس متناسق مع حجم البطاقات */
+    line-height: 1.6;
+  }
+
+  .rb-section .font-extrabold {
+    font-weight: 800; /* 🔹 خط العناوين */
+  }
+
+  .rb-section .text-sm:not(.font-extrabold) {
+    font-weight: 400; /* 🔹 خط الفقرات */
+  }
+
 }
