@@ -2431,3 +2431,85 @@ body[data-theme="dark-navy"] .skill-card h3 {
 body[data-theme="dark-navy"] .skill-card p {
   color: #B4B8C9;
 }
+
+
+/* 🟣 تعريف متغيرات خاصة ومميزة بـ RawanBadr */
+.rb-section {
+  --rb-bg-light: linear-gradient(to bottom, #FAF7FF, #FBF8FF, #FFFFFF);
+  --rb-bg-dark: #0B1121;
+
+  --rb-card-light: #FFFFFF;
+  --rb-card-dark: #11162A;
+
+  --rb-border-light: #E5E1F6;
+  --rb-border-dark: #7E3CC8;
+
+  --rb-title-light: #2E224C;
+  --rb-title-dark: #FFFFFF;
+
+  --rb-text-light: #7E3CC8;
+  --rb-text-dark: #B7B6FF;
+
+  --rb-hover-border-light: #CBB7FF;
+  --rb-hover-border-dark: #A9ABFF;
+}
+/* 🌞 الوضع الفاتح */
+.rb-section {
+  background: #FFFFFF;
+}
+
+.rb-section .rounded-2xl {
+  background: #FFFFFF;
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  box-shadow: 0 3px 10px rgba(126, 60, 200, 0.06);
+  border-radius: 1rem;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+/* عند المرور */
+.rb-section .rounded-2xl:hover {
+  border-color: #CBB7FF;
+  box-shadow: 0 6px 16px rgba(126, 60, 200, 0.12);
+  transform: translateY(-3px);
+}
+
+/* العنوان */
+.rb-section .font-extrabold {
+  color: #2E224C;
+}
+
+/* الفقرة */
+.rb-section .text-sm:not(.font-extrabold) {
+  color: #7E3CC8; /* ✨ الموف الفاتح الأساسي */
+}
+
+
+/* 🌙 الوضع الغامق */
+body[data-theme="dark-navy"] .rb-section {
+  background: #0f182c;
+}
+
+body[data-theme="dark-navy"] .rb-section .rounded-2xl {
+  background: #141f38;
+  border: 1px solid rgba(126, 60, 200, 0.2); /* حدود موف خفيفة جدًا */
+  box-shadow: 0 2px 8px #141f38;;
+  transition: all 0.3s ease;
+}
+
+/* عند المرور في الغامق */
+body[data-theme="dark-navy"] .rb-section .rounded-2xl:hover {
+  border-color: #A9ABFF;
+  box-shadow: 0 0 16px rgba(169, 171, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+/* العناوين في الغامق */
+body[data-theme="dark-navy"] .rb-section .font-extrabold {
+  color: #FFFFFF;
+}
+
+/* الفقرات في الغامق */
+body[data-theme="dark-navy"] .rb-section .text-sm:not(.font-extrabold) {
+  color: #C9B8FF; /* ✨ موف فاتح جداً وواضح */
+}
