@@ -603,7 +603,7 @@ section.portfolio:after {
   -webkit-text-fill-color: transparent;
 }
 .portfolio__header h2 span {
-  background: linear-gradient(135deg, #000, #3b0a6f);
+  background: #4c4c4e;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
